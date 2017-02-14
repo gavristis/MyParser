@@ -11,8 +11,8 @@ namespace MyParser
         static void Main(string[] args)
         {
             var container = Container.For<ConsoleRegistry>();
-            var ps = container.GetInstance<IPageService>();
             var sts = container.GetInstance<ISiteTreeService>();
+            var ts = container.GetInstance<ITaskService>();
             string input;
             int threads;
             //while ((input = Console.ReadLine())!="start")
@@ -21,7 +21,7 @@ namespace MyParser
             //    ps.AddToQueue(url);
 
             //}
-            ps.AddToQueue("http://www.ok-studio.com.ua/");
+            ts.AddToQueue("http://www.ok-studio.com.ua/");
             //Console.WriteLine("Set number of threads");
             //if (int.TryParse(Console.ReadLine(), out threads))
             //{
@@ -30,8 +30,9 @@ namespace MyParser
             //else
             //{
 
-            ps.Run(10, false, 200);
-            sts.BuildTree("http://www.ok-studio.com.ua/", 3);
+            ts.Run(10, false, 200);
+            //sts.BuildTree("http://www.ok-studio.com.ua/", 3);
+            sts.BuildTree("http://www.ok-studio.com.ua/", 5);
             //}
             //Main(args);
         }

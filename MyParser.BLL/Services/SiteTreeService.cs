@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -13,21 +14,25 @@ namespace MyParser.BLL.Services
     public class SiteTreeService : ISiteTreeService
     {
         public static List<Page> childPages = new List<Page>();
-        private IPageService pageService;
-        private IUnitOfWork _unitOfWork;
+        private readonly IPageService pageService;
+        private readonly IUnitOfWork _unitOfWork;
+        private StreamWriter file;
         public SiteTreeService(IUnitOfWork unit)
         {
             _unitOfWork = unit;
         }
         public void BuildTree(Page startingPage, int maxDepth)
         {
-            if (startingPage.Depth < maxDepth)
+            if (startingPage.Depth <= maxDepth)
             {
-                Console.WriteLine(startingPage.Depth + startingPage.Uri.AbsoluteUri);
+                var prefix = new string('-', startingPage.Depth);
+                string line = startingPage.Depth + startingPage.Uri.AbsoluteUri;
+                file.WriteLine("|"+prefix + line);
                 childPages = startingPage.ChildLinks.ToList();
-                //childPages = _unitOfWork.PageRepository.Get().Where(s => s.Parent == startingPage).ToList();
                 foreach (var page in childPages)
                 {
+                    Console.WriteLine(page.Url);
+                    page.Depth = startingPage.Depth + 1;
                     BuildTree(page, maxDepth);
                 }
             }
@@ -35,7 +40,8 @@ namespace MyParser.BLL.Services
         public void BuildTree(string startingUrl, int maxDepth)
         {
             Page startingPage = _unitOfWork.PageRepository.Get(s => s.Uri.AbsoluteUri == startingUrl).First();
-            
+            file = new StreamWriter(@"C:\Users\vgavrilov\Desktop\SiteTree.txt");
+            startingPage.Depth = 0;
             BuildTree(startingPage, maxDepth);
                         
         }

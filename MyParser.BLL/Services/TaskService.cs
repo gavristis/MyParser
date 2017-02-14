@@ -8,27 +8,25 @@ using System.Threading;
 using System.Threading.Tasks;
 using MyParser.BLL.Interfaces;
 using MyParser.BLL.Models;
-using MyParser.BLL.Services;
 using MyParser.DAL.Interfaces;
-using MyParser.DAL.Repositories;
 using MyParser.Models;
 
-namespace MyParser.BLL.Infrastructure
+namespace MyParser.BLL.Services
 {
-    public class ThreadService
+    public class TaskService : ITaskService
     {
-        private readonly IPageService ps;
-        private readonly object _lock = new object();
         private readonly IUnitOfWork _unitOfWork;
-        public static List<string> visitedPages = new List<string>();
+        private readonly IParserService _parserService;
+        public static List<string> visitedPages = new List<string>();//to task service
         public ConcurrentQueue<PageRelationDto> queue = new ConcurrentQueue<PageRelationDto>();
-        public ThreadService(IPageService _pageService)
+        private readonly object _lock = new object();
+
+        public TaskService(IUnitOfWork unitOfWork, IParserService parserService)
         {
-            ps = _pageService;
+            _unitOfWork = unitOfWork;
+            _parserService = parserService;
         }
-
-
-        public void Execute(bool withExternals, int maxDepth)//TODO:Modernize producer-consumer(AutoResetEvent)
+        public void Execute(bool withExternals, int maxDepth)//TODO:Modernize producer-consumer(AutoResetEvent) to TaskService
         {
             PageRelationDto dto;
             while (true)
@@ -45,14 +43,13 @@ namespace MyParser.BLL.Infrastructure
                         {
                             continue;
                         }
-                        var p = ps.Parse(dto.Url, withExternals, depth);
+                        var p = _parserService.Parse(dto.Url, withExternals, depth);
                         p.Parent = dto.Parent;
                         lock (_lock)
                         {
                             _unitOfWork.PageRepository.Add(p);
                             _unitOfWork.Save();
                         }
-
                     }
                     catch (WebException ex)
                     {
@@ -63,10 +60,14 @@ namespace MyParser.BLL.Infrastructure
                 else
                 {
                     Thread.Sleep(2000);
+                    if (queue.IsEmpty)
+                    {
+                        break;
+                    }
                 }
             }
         }
-        public void Run(int threadNum, bool withExternals, int depth)
+        public void Run(int threadNum, bool withExternals, int depth)// to task service
         {
             var threads = new List<Task>();
             for (int i = 0; i < threadNum; i++)
@@ -75,7 +76,7 @@ namespace MyParser.BLL.Infrastructure
                 Task t = Task.Factory.StartNew(() =>
                 {
                     Thread.CurrentThread.Name = name;
-                    //Execute(withExternals, depth);
+                    Execute(withExternals, depth);
                 });
 
                 threads.Add(t);
@@ -83,7 +84,7 @@ namespace MyParser.BLL.Infrastructure
 
             Task.WaitAll(threads.ToArray());
         }
-        public void AddToQueue(string url, Page parent)
+        public void AddToQueue(string url, Page parent)//task service
         {
             if (!visitedPages.Contains(url))
             {

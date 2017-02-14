@@ -19,6 +19,11 @@ namespace MyParser
             For<IUnitOfWork>().Use<UnitOfWork>();
             For<IPageService>().Use<PageService>();
             For<ISiteTreeService>().Use<SiteTreeService>();
+            For<IChildLinkService>().Use<ChildLinkService>();
+            For<ICssService>().Use<CssService>();
+            For<IImageService>().Use<ImageService>();
+            For<ITaskService>().Use<TaskService>();
+            For<IParserService>().Use<ParserService>();
         }
     }
 }
