@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using HtmlAgilityPack;
 using MyParser.BLL.Interfaces;
 using MyParser.Models;
 
@@ -6,9 +8,10 @@ namespace MyParser.BLL.Services
 {
     public class CssService : ICssService
     {
-        public void SearchCss(Page link)//move return list take(HtmlDoc)
+        public List<Css> SearchCss(HtmlDocument doc)
         {
-            var nodes = link.HtmlDocument.DocumentNode.Descendants("link")
+            var res = new List<Css>();
+            var nodes = doc.DocumentNode.Descendants("link")
                 .Select(s => new { Rel = s.GetAttributeValue("rel", null), Href = s.GetAttributeValue("href", null) })
                 .ToList();
 
@@ -16,9 +19,10 @@ namespace MyParser.BLL.Services
             {
                 if (s.Rel == "stylesheet")
                 {
-                    link.Css.Add(new Css { Link = s.Href });
+                    res.Add(new Css { Link = s.Href });
                 }
             }
+            return res;
         }
     }
 }

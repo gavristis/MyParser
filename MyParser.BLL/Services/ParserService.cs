@@ -22,15 +22,13 @@ namespace MyParser.BLL.Services
         {
             Page page = new Page();
             page.HtmlDocument = new HtmlDocument();
-            page.Css = new List<Css>();
-            page.Images = new List<Image>();
             page.ChildUlrs = new List<string>();
             page.Url = url;
             _pageService.MeasureTime(page);
             //page.Html = page.HtmlDocument.DocumentNode.OuterHtml;                        
             _pageService.MeasureSize(page);
-            _cssService.SearchCss(page);
-            _imageService.SearchImages(page);
+            page.Css = _cssService.SearchCss(page.HtmlDocument);
+            page.Images = _imageService.SearchImages(page.HtmlDocument);
             page.Depth = depth;
             if (withExternals == false)
             {

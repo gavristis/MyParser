@@ -1,9 +1,11 @@
-﻿using MyParser.Models;
+﻿using System.Collections.Generic;
+using HtmlAgilityPack;
+using MyParser.Models;
 
 namespace MyParser.BLL.Interfaces
 {
     public interface ICssService
     {
-        void SearchCss(Page link);
+        List<Css> SearchCss(HtmlDocument doc);
     }
 }

@@ -28,9 +28,9 @@ namespace MyParser
             //else
             //{
 
-            ts.Run(10, false, 2);
+            ts.Run(false, 4, 15); //externals, depth, threads
             //sts.BuildTree("http://www.ok-studio.com.ua/", 3);
-            sts.BuildTree("http://www.ok-studio.com.ua/zal-201", 2);
+            sts.BuildTree("http://www.ok-studio.com.ua/zal-201", 4);
             //}
             //Main(args);
         }

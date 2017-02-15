@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using HtmlAgilityPack;
 using MyParser.BLL.Interfaces;
 using MyParser.Models;
 
@@ -7,9 +9,10 @@ namespace MyParser.BLL.Services
 {
     public class ImageService : IImageService
     {
-        public void SearchImages(Page link)//move ^ same
+        public List<Image> SearchImages(HtmlDocument doc)
         {
-            var nodes = link.HtmlDocument.DocumentNode.Descendants("img");
+            var  res = new List<Image>();
+            var nodes = doc.DocumentNode.Descendants("img");
             var images =
                 nodes.Select(s => s.GetAttributeValue("src", null)).Where(s => !String.IsNullOrEmpty(s)).ToList();
 
@@ -17,10 +20,9 @@ namespace MyParser.BLL.Services
             {
                 Image i = new Image();
                 i.Link = img;
-                link.Images.Add(i);
+                res.Add(i);
             }
-
-
+            return res;
         }
     }
 }

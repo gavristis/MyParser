@@ -1,9 +1,11 @@
-﻿using MyParser.Models;
+﻿using System.Collections.Generic;
+using HtmlAgilityPack;
+using MyParser.Models;
 
 namespace MyParser.BLL.Interfaces
 {
     public interface IImageService
     {
-        void SearchImages(Page link);
+        List<Image> SearchImages(HtmlDocument doc);
     }
 }

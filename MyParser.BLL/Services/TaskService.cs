@@ -24,7 +24,7 @@ namespace MyParser.BLL.Services
             _unitOfWork = unitOfWork;
             _parserService = parserService;
         }
-        public void Execute(bool withExternals, int maxDepth)//TODO:Modernize producer-consumer(AutoResetEvent) to TaskService
+        public void Execute(bool withExternals, int maxDepth)
         {
             PageRelationDto dto;
             while (true)
@@ -69,7 +69,7 @@ namespace MyParser.BLL.Services
                 }
             }
         }
-        public void Run(int threadNum, bool withExternals, int depth)// to task service
+        public void Run(bool withExternals, int depth, int threadNum = 10)
         {
             var threads = new List<Task>();
             for (int i = 0; i < threadNum; i++)
@@ -86,7 +86,7 @@ namespace MyParser.BLL.Services
 
             Task.WaitAll(threads.ToArray());
         }
-        public void AddToQueue(string url, Page parent)//task service
+        public void AddToQueue(string url, Page parent)
         {
             if (!visitedPages.Contains(url))
             {
