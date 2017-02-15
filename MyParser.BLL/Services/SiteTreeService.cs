@@ -13,10 +13,12 @@ namespace MyParser.BLL.Services
 {
     public class SiteTreeService : ISiteTreeService
     {
-        public static List<Page> childPages = new List<Page>();
+        private string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         private readonly IPageService pageService;
         private readonly IUnitOfWork _unitOfWork;
         private StreamWriter file;
+        public static List<Page> childPages = new List<Page>();
+
         public SiteTreeService(IUnitOfWork unit)
         {
             _unitOfWork = unit;
@@ -25,24 +27,29 @@ namespace MyParser.BLL.Services
         {
             if (startingPage.Depth <= maxDepth)
             {
+                childPages = startingPage.ChildLinks.ToList();
                 var prefix = new string('-', startingPage.Depth);
                 string line = startingPage.Depth + startingPage.Uri.AbsoluteUri;
-                file.WriteLine("|"+prefix + line);
-                childPages = startingPage.ChildLinks.ToList();
+                Console.WriteLine("|" + prefix + line);
+                using (file = new StreamWriter(path + @"\" + startingPage.Uri.Host + ".txt", true))
+                {
+                    file.WriteLine("|" + prefix + line);
+                }
+                
                 foreach (var page in childPages)
                 {
-                    Console.WriteLine(page.Url);
-                    page.Depth = startingPage.Depth + 1;
+                    
+                    //page.Depth = startingPage.Depth + 1;
+                    //Console.WriteLine(page.Url +" page has depth of "+ page.Depth);
                     BuildTree(page, maxDepth);
                 }
             }
         }
         public void BuildTree(string startingUrl, int maxDepth)
         {
-            Page startingPage = _unitOfWork.PageRepository.Get(s => s.Uri.AbsoluteUri == startingUrl).First();
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            file = new StreamWriter(path + @"\SiteTree.txt");
-            startingPage.Depth = 0;
+            Page startingPage = _unitOfWork.PageRepository.Get(s => s.Uri.AbsoluteUri == startingUrl).First();            
+            
+            //startingPage.Depth = 0;
             BuildTree(startingPage, maxDepth);
                         
         }
