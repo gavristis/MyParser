@@ -25,6 +25,9 @@ namespace MyParser.Models
         [NotMapped]
         public HtmlDocument HtmlDocument { get; set ; }
 
+        [NotMapped]
+        public virtual ICollection<string> ChildUlrs { get; set; }
+
         public virtual ICollection<Page> ChildLinks { get; set; }
 
         public virtual ICollection<Css> Css { get; set; }

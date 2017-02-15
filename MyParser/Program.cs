@@ -30,7 +30,7 @@ namespace MyParser
             //else
             //{
 
-            ts.Run(10, false, 200);
+            ts.Run(10, false, 2);
             //sts.BuildTree("http://www.ok-studio.com.ua/", 3);
             sts.BuildTree("http://www.ok-studio.com.ua/", 5);
             //}

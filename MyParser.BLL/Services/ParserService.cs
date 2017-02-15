@@ -28,6 +28,7 @@ namespace MyParser.BLL.Services
             page.HtmlDocument = new HtmlDocument();
             page.Css = new List<Css>();
             page.Images = new List<Image>();
+            page.ChildUlrs = new List<string>();
             page.Url = url;
             _pageService.MeasureTime(page);
             //page.Html = page.HtmlDocument.DocumentNode.OuterHtml;                        

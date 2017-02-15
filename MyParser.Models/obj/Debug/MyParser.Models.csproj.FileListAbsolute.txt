@@ -24,3 +24,16 @@ C:\Users\Gavristis\Desktop\MyParser\MyParser.Models\bin\Debug\HtmlAgilityPack.xm
 C:\Users\Gavristis\Desktop\MyParser\MyParser.Models\obj\Debug\MyParser.Models.csprojResolveAssemblyReference.cache
 C:\Users\Gavristis\Desktop\MyParser\MyParser.Models\obj\Debug\MyParser.Models.dll
 C:\Users\Gavristis\Desktop\MyParser\MyParser.Models\obj\Debug\MyParser.Models.pdb
+C:\Users\Gavristis\Desktop\Internship\MyParser\MyParser.Models\bin\Debug\MyParser.Models.dll.config
+C:\Users\Gavristis\Desktop\Internship\MyParser\MyParser.Models\bin\Debug\MyParser.Models.dll
+C:\Users\Gavristis\Desktop\Internship\MyParser\MyParser.Models\bin\Debug\MyParser.Models.pdb
+C:\Users\Gavristis\Desktop\Internship\MyParser\MyParser.Models\bin\Debug\EntityFramework.dll
+C:\Users\Gavristis\Desktop\Internship\MyParser\MyParser.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gavristis\Desktop\Internship\MyParser\MyParser.Models\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Gavristis\Desktop\Internship\MyParser\MyParser.Models\bin\Debug\EntityFramework.xml
+C:\Users\Gavristis\Desktop\Internship\MyParser\MyParser.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gavristis\Desktop\Internship\MyParser\MyParser.Models\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Gavristis\Desktop\Internship\MyParser\MyParser.Models\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Gavristis\Desktop\Internship\MyParser\MyParser.Models\obj\Debug\MyParser.Models.csprojResolveAssemblyReference.cache
+C:\Users\Gavristis\Desktop\Internship\MyParser\MyParser.Models\obj\Debug\MyParser.Models.dll
+C:\Users\Gavristis\Desktop\Internship\MyParser\MyParser.Models\obj\Debug\MyParser.Models.pdb

@@ -40,7 +40,8 @@ namespace MyParser.BLL.Services
         public void BuildTree(string startingUrl, int maxDepth)
         {
             Page startingPage = _unitOfWork.PageRepository.Get(s => s.Uri.AbsoluteUri == startingUrl).First();
-            file = new StreamWriter(@"C:\Users\vgavrilov\Desktop\SiteTree.txt");
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            file = new StreamWriter(path + @"\SiteTree.txt");
             startingPage.Depth = 0;
             BuildTree(startingPage, maxDepth);
                         

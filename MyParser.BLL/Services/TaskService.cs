@@ -45,6 +45,10 @@ namespace MyParser.BLL.Services
                         }
                         var p = _parserService.Parse(dto.Url, withExternals, depth);
                         p.Parent = dto.Parent;
+                        foreach (var link in p.ChildUlrs)
+                        {
+                            AddToQueue(link, p);
+                        }
                         lock (_lock)
                         {
                             _unitOfWork.PageRepository.Add(p);

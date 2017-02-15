@@ -10,12 +10,6 @@ namespace MyParser.BLL.Services
 {
     public class ChildLinkService : IChildLinkService
     {
-        private readonly ITaskService _taskService;
-
-        public ChildLinkService(ITaskService taskService)
-        {
-            _taskService = taskService;
-        }
         public void GetLinks(Page link)//move => bool getinternals
         {
             var nodes = link.HtmlDocument.DocumentNode.Descendants("a");
@@ -24,7 +18,7 @@ namespace MyParser.BLL.Services
 
             foreach (var s in links)
             {
-                _taskService.AddToQueue(s, link);
+                link.ChildUlrs.Add(s);
             }
         }
         public void GetInternals(Page link)
@@ -41,20 +35,20 @@ namespace MyParser.BLL.Services
                         if (s.StartsWith("//"))
                         {
                             var s1 = "http:" + s;
-                            _taskService.AddToQueue(s1, link);
+                            link.ChildUlrs.Add(s1); ;
                         }
                         else if (link.Uri.AbsoluteUri.EndsWith("/"))
                         {
                             string substring = s.Substring(1, s.Length - 1);
                             var s1 = link.Uri.AbsoluteUri + substring;
                             //link.ChildLinks.Add(s1);
-                            _taskService.AddToQueue(s1, link);
+                            link.ChildUlrs.Add(s1); ;
                         }
                         else
                         {
 
                             var s1 = link.Uri.Scheme + "://" + link.Uri.Host + s;
-                            _taskService.AddToQueue(s1, link);
+                            link.ChildUlrs.Add(s1);
 
                         }
 
@@ -63,8 +57,7 @@ namespace MyParser.BLL.Services
                 }
                 else
                 {
-                    //link.ChildLinks.Add(s);
-                    _taskService.AddToQueue(s, link);
+                    link.ChildUlrs.Add(s);
                 }
             }
         }
