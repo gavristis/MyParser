@@ -1,6 +1,4 @@
-﻿using MyParser.Models;
-
-namespace MyParser.BLL.Interfaces
+﻿namespace MyParser.BLL.Interfaces
 {
     public interface ISiteTreeService
     {

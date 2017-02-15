@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 
 namespace MyParser.DAL
 {
-    public class MyDbInitializer : DropCreateDatabaseIfModelChanges<MyDbContext>
+    public class MyDbInitializer : DropCreateDatabaseAlways<MyDbContext>
     {
         //protected override void Seed(MyDbContext context)
         //{

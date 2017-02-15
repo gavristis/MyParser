@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Net;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using HtmlAgilityPack;
 using MyParser.BLL.Interfaces;
-using MyParser.BLL.Models;
-using MyParser.DAL.Interfaces;
 using MyParser.Models;
 
 namespace MyParser.BLL.Services

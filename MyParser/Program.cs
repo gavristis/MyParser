@@ -1,6 +1,4 @@
-﻿using System;
-using System.Text.RegularExpressions;
-using MyParser.BLL.Interfaces;
+﻿using MyParser.BLL.Interfaces;
 using StructureMap;
 
 
@@ -30,9 +28,9 @@ namespace MyParser
             //else
             //{
 
-            //ts.Run(10, false, 200);
+            ts.Run(10, false, 2);
             //sts.BuildTree("http://www.ok-studio.com.ua/", 3);
-            sts.BuildTree("http://www.ok-studio.com.ua/zal-201", 4);
+            sts.BuildTree("http://www.ok-studio.com.ua/zal-201", 2);
             //}
             //Main(args);
         }

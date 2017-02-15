@@ -1,5 +1,4 @@
-﻿using System;
-using MyParser.Models;
+﻿using MyParser.Models;
 
 namespace MyParser.BLL.Models
 {
