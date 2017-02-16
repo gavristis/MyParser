@@ -40,7 +40,7 @@ namespace MyParser.Models
 
         //public bool Downloaded { get; set; }
 
-        public virtual Page Parent { get; set; }
+        public virtual Page Parent { get; set; } //TODO: Possibly set to string ParentUrl (Same table reference)
 
         public int Depth { get; set; }
 

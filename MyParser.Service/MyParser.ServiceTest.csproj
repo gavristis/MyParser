@@ -7,8 +7,8 @@
     <ProjectGuid>{E6F3C914-CA82-4386-B86C-CCF9F2542A64}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyParser.Service</RootNamespace>
-    <AssemblyName>MyParser.Service</AssemblyName>
+    <RootNamespace>MyParser.ServiceTest</RootNamespace>
+    <AssemblyName>MyParser.ServiceTest</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -47,8 +47,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\ConfigureService.cs" />
-    <Compile Include="Configuration\MyService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

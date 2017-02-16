@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -15,9 +16,10 @@ namespace MyParser.BLL.Services
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IParserService _parserService;
-        public static List<string> visitedPages = new List<string>();//to task service
+        public static List<string> visitedPages = new List<string>();
         public ConcurrentQueue<PageRelationDto> queue = new ConcurrentQueue<PageRelationDto>();
         private readonly object _lock = new object();
+
 
         public TaskService(IUnitOfWork unitOfWork, IParserService parserService)
         {
@@ -26,6 +28,7 @@ namespace MyParser.BLL.Services
         }
         public void Execute(bool withExternals, int maxDepth)
         {
+            
             PageRelationDto dto;
             while (true)
             {
@@ -49,6 +52,15 @@ namespace MyParser.BLL.Services
                         }
                         lock (_lock)
                         {
+                            //var loadedPage = _unitOfWork.PageRepository.Get(s => s.Url == p.Url).First();
+                            //if (loadedPage != null)
+                            //{
+                            //    _unitOfWork.PageRepository.Delete(loadedPage);
+                            //    _unitOfWork.PageRepository.Add(p);
+                            //    _unitOfWork.Save();
+                            //}
+
+
                             _unitOfWork.PageRepository.Add(p);
                             _unitOfWork.Save();
                         }
@@ -69,8 +81,18 @@ namespace MyParser.BLL.Services
                 }
             }
         }
-        public void Run(bool withExternals, int depth, int threadNum = 10)
+
+        public void LoadVisitedLinks()
         {
+            foreach (var p in _unitOfWork.PageRepository.Get())
+            {
+                visitedPages.Add(p.Url);
+            }
+        }
+        public void Run(string url, bool withExternals, int depth, int threadNum = 10)
+        {
+            LoadVisitedLinks();
+            AddToQueue(url);
             var threads = new List<Task>();
             for (int i = 0; i < threadNum; i++)
             {
@@ -84,7 +106,7 @@ namespace MyParser.BLL.Services
                 threads.Add(t);
             }
 
-            Task.WaitAll(threads.ToArray());
+            Task.WaitAll(threads.ToArray());           
         }
         public void AddToQueue(string url, Page parent)
         {
@@ -92,7 +114,7 @@ namespace MyParser.BLL.Services
             {
                 lock (_lock)
                 {
-                    if (!visitedPages.Contains(url))
+                    if (!visitedPages.Contains(url))  //TODO: possibly remove
                     {
                         PageRelationDto dto = new PageRelationDto
                         {

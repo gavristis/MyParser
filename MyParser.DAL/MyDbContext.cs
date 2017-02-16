@@ -22,7 +22,26 @@ namespace MyParser.DAL
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+
+            //modelBuilder.Entity<Page>()
+            //    .HasMany(f => f.Css)
+            //    .WithRequired(p => p.Page)
+            //    .WillCascadeOnDelete();
+            //modelBuilder.Entity<Page>()
+            //    .HasMany(f => f.Images)
+            //    .WithRequired(p => p.Page)
+            //    .WillCascadeOnDelete();
+            //modelBuilder.Entity<Css>()
+            //    .HasKey(p => p.Id)
+            //    .HasRequired(p => p.Page)
+            //    .WithOptional();
+            //modelBuilder.Entity<Image>()
+            //    .HasKey(p => p.Id)
+            //    .HasRequired(p => p.Page)
+            //    .WithOptional();
         }
 
         public virtual DbSet<Page> Pages { get; set; }

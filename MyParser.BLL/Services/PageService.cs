@@ -8,12 +8,6 @@ namespace MyParser.BLL.Services
 {
     public class PageService : IPageService
     {
-
-        public PageService()
-        {
-        }
-
-
         public void MeasureTime(Page link)
         {
             Stopwatch stopWatch = new Stopwatch();
@@ -29,8 +23,5 @@ namespace MyParser.BLL.Services
             link.Size = Encoding.Unicode.GetByteCount(link.HtmlDocument.DocumentNode.OuterHtml);
             //Console.WriteLine("Page has size of {0} bytes", link.Size);
         }
-
-
-
     }
 }
