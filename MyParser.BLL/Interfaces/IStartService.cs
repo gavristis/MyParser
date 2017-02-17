@@ -1,6 +1,6 @@
 ﻿namespace MyParser.BLL.Interfaces
 {
-    public interface IRunService
+    public interface IStartService
     {
 
     }

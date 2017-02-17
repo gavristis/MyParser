@@ -40,3 +40,6 @@ C:\Users\Gavristis\Desktop\Internship\MyParser\MyParser.BLL\bin\Debug\EntityFram
 C:\Users\Gavristis\Desktop\Internship\MyParser\MyParser.BLL\obj\Debug\MyParser.BLL.csprojResolveAssemblyReference.cache
 C:\Users\Gavristis\Desktop\Internship\MyParser\MyParser.BLL\obj\Debug\MyParser.BLL.dll
 C:\Users\Gavristis\Desktop\Internship\MyParser\MyParser.BLL\obj\Debug\MyParser.BLL.pdb
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\NLog.config
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\NLog.dll
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\NLog.xml

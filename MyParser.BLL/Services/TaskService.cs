@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Threading;
@@ -9,6 +10,7 @@ using MyParser.BLL.Interfaces;
 using MyParser.BLL.Models;
 using MyParser.DAL.Interfaces;
 using MyParser.Models;
+using NLog;
 
 namespace MyParser.BLL.Services
 {
@@ -16,9 +18,11 @@ namespace MyParser.BLL.Services
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IParserService _parserService;
-        public static List<string> visitedPages = new List<string>();
+        public static HashSet<string> visitedPages = new HashSet<string>();
         public ConcurrentQueue<PageRelationDto> queue = new ConcurrentQueue<PageRelationDto>();
         private readonly object _lock = new object();
+        private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
+        private readonly Stopwatch _stopwatch = new Stopwatch();
 
 
         public TaskService(IUnitOfWork unitOfWork, IParserService parserService)
@@ -27,15 +31,15 @@ namespace MyParser.BLL.Services
             _parserService = parserService;
         }
         public void Execute(bool withExternals, int maxDepth)
-        {
+        {   
             
             PageRelationDto dto;
             while (true)
             {
-                Console.WriteLine("Thread #{0} started executing", Thread.CurrentThread.Name);
+                //Console.WriteLine("Thread #{0} started executing", Thread.CurrentThread.Name);
                 if (queue.TryDequeue(out dto))
                 {
-                    Console.WriteLine("Thread #{0} has taken url: {1}", Thread.CurrentThread.Name, dto.Url);
+                    //Console.WriteLine("Thread #{0} has taken url: {1}", Thread.CurrentThread.Name, dto.Url);
 
                     try
                     {
@@ -65,9 +69,9 @@ namespace MyParser.BLL.Services
                             _unitOfWork.Save();
                         }
                     }
-                    catch (WebException ex)
+                    catch (Exception ex)
                     {
-                        Console.WriteLine(ex.Message);
+                        _logger.Error(ex.Message);
                     }
 
                 }
@@ -78,8 +82,10 @@ namespace MyParser.BLL.Services
                     {
                         break;
                     }
-                }
+                }                
             }
+
+
         }
 
         public void LoadVisitedLinks()
@@ -89,10 +95,15 @@ namespace MyParser.BLL.Services
                 visitedPages.Add(p.Url);
             }
         }
+
         public void Run(string url, bool withExternals, int depth, int threadNum = 10)
         {
             LoadVisitedLinks();
             AddToQueue(url);
+
+            _logger.Info("Execution started");
+            _stopwatch.Start();
+
             var threads = new List<Task>();
             for (int i = 0; i < threadNum; i++)
             {
@@ -106,16 +117,21 @@ namespace MyParser.BLL.Services
                 threads.Add(t);
             }
 
-            Task.WaitAll(threads.ToArray());           
+            Task.WaitAll(threads.ToArray());
+
+            _stopwatch.Stop();
+            _logger.Info("Execution finished, time required: {0} milliseconds", _stopwatch.ElapsedMilliseconds);
+
         }
+
         public void AddToQueue(string url, Page parent)
         {
             if (!visitedPages.Contains(url))
             {
                 lock (_lock)
                 {
-                    if (!visitedPages.Contains(url))  //TODO: possibly remove
-                    {
+                    //if (!visitedPages.Contains(url))  //TODO: possibly remove
+                    //{
                         PageRelationDto dto = new PageRelationDto
                         {
                             Url = url,
@@ -123,7 +139,7 @@ namespace MyParser.BLL.Services
                         };
                         queue.Enqueue(dto);
                         visitedPages.Add(url);
-                    }
+                    //}
                 }
             }
         }

@@ -28,7 +28,8 @@ namespace MyParser.BLL.Services
                 var prefix = new string('-', startingPage.Depth);
                 string line = startingPage.Depth + startingPage.Uri.AbsoluteUri;
                 Console.WriteLine("|" + prefix + line);
-                using (file = new StreamWriter(path + @"\" + startingPage.Uri.Host + ".txt", true))
+                //using (file = new StreamWriter(path + @"\" + startingPage.Uri.Host + ".txt", true))
+                using (file = new StreamWriter(path + @"\SiteTree.txt", true))
                 {
                     file.WriteLine("|" + prefix + line);
                 }
@@ -40,6 +41,15 @@ namespace MyParser.BLL.Services
                     //Console.WriteLine(page.Url +" page has depth of "+ page.Depth);
                     BuildTree(page, maxDepth);
                 }
+            }
+        }
+
+        public void BuildTree(int maxDepth)
+        {
+            var pages = _unitOfWork.PageRepository.Get();
+            foreach (var page in pages)
+            {
+                BuildTree(page, maxDepth);
             }
         }
         public void BuildTree(string startingUrl, int maxDepth)

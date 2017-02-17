@@ -28,7 +28,7 @@ namespace MyParser.Models
         [NotMapped]
         public virtual ICollection<string> ChildUlrs { get; set; }
 
-        public virtual ICollection<Page> ChildLinks { get; set; }
+        public virtual ICollection<Page> ChildLinks { get; set; } //Fix self-referencing
 
         public virtual ICollection<Css> Css { get; set; }
 
@@ -40,7 +40,7 @@ namespace MyParser.Models
 
         //public bool Downloaded { get; set; }
 
-        public virtual Page Parent { get; set; } //TODO: Possibly set to string ParentUrl (Same table reference)
+        public virtual Page Parent { get; set; }
 
         public int Depth { get; set; }
 

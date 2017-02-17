@@ -10,7 +10,7 @@ namespace MyParser.BLL.Services
         {
             var nodes = link.HtmlDocument.DocumentNode.Descendants("a");
             var links = nodes.Select(s => s.GetAttributeValue("href", null))
-                .Where(s => s != link.Uri.AbsoluteUri && !string.IsNullOrEmpty(s) && !s.StartsWith("#") && !s.StartsWith("/")).Distinct().ToList();
+                .Where(s => s != null && s != "#" && s != "/" && !s.Contains(".jpg")).Distinct().ToList();
 
             foreach (var s in links)
             {

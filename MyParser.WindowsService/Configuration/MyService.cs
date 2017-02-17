@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyParser.Service.Configuration
+namespace MyParser.WindowsService.Configuration
 {
     public class MyService
     {

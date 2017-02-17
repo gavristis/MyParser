@@ -4,5 +4,6 @@ namespace MyParser.BLL.Services
 {
     public class BulkInsertService : IBulkInsertService
     {
+        //Probably redundant
     }
 }

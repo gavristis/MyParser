@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Security.Cryptography;
+using System.Security.Policy;
 using MyParser.BLL.Interfaces;
 using StructureMap;
 
@@ -14,33 +15,36 @@ namespace MyParser
             var container = Container.For<ConsoleRegistry>();
             var sts = container.GetInstance<ISiteTreeService>();
             var ts = container.GetInstance<ITaskService>();
+            
             string input;
             //int threads;
-
-            if ((input = Console.ReadLine()) == "start")
+            while (true)
             {
-                //{
-                //    var url = "http://" + input;
-                //    ps.AddToQueue(url);
+                if ((input = Console.ReadLine()) == "start")
+                {
+                    //{
+                    //    var url = "http://" + input;
+                    //    ps.AddToQueue(url);
 
-                //}
-                Stopwatch s1 = new Stopwatch();
-                
-                //Console.WriteLine("Set number of threads");
-                //if (int.TryParse(Console.ReadLine(), out threads))
-                //{
-                //    ps.Run(threads, false);
-                //}
-                //else
-                //{
-                s1.Start();
-                ts.Run("http://www.ok-studio.com.ua/", false, 4); //externals, depth, threads
-                s1.Stop();
-                Console.WriteLine(s1.ElapsedMilliseconds);
-                sts.BuildTree("http://www.ok-studio.com.ua/zal-201", 4);
-                //}
+                    //}
+                    Stopwatch s1 = new Stopwatch();
+
+                    //Console.WriteLine("Set number of threads");
+                    //if (int.TryParse(Console.ReadLine(), out threads))
+                    //{
+                    //    ps.Run(threads, false);
+                    //}
+                    //else
+                    //{
+                    s1.Start();
+                    ts.Run("http://www.ok-studio.com.ua/", false, 4); //externals, depth, threads
+                    //sts.BuildTree("http://www.ok-studio.com.ua/", 3);
+                    s1.Stop();
+                    Console.WriteLine(s1.ElapsedMilliseconds);
+                    sts.BuildTree(1);
+                    //}
+                }
             }
-            Main(args);
         }
 
     }

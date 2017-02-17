@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Topshelf;
 
-namespace MyParser.Service.Configuration
+namespace MyParser.WindowsService.Configuration
 {
 
     internal static class ConfigureService
@@ -22,8 +22,8 @@ namespace MyParser.Service.Configuration
                 });
                 //Setup Account that window service use to run.  
                 configure.RunAsLocalSystem();
-                configure.SetServiceName("MyParser.Service");
-                configure.SetDisplayName("MyParser.Service");
+                configure.SetServiceName("MyParser.WindowsService");
+                configure.SetDisplayName("MyParser.WindowsService");
                 configure.SetDescription("My Service For Parsing HTML Pages");
 
             });

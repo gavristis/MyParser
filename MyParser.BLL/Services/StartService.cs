@@ -2,9 +2,9 @@
 
 namespace MyParser.BLL.Services
 {
-    public class RunService : IRunService
+    public class StartService : IStartService
     {
-        public void Run()
+        public void Start()
         {
             
         }
