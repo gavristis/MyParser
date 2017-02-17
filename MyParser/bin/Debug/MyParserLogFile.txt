@@ -1,0 +1,2 @@
+2017-02-17 17:49:53.2354|INFO|MyParser.BLL.Services.TaskService|Execution started
+2017-02-17 17:50:30.2364|INFO|MyParser.BLL.Services.TaskService|Execution finished, time required: 36973 milliseconds
