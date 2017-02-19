@@ -31,16 +31,15 @@ namespace MyParser.BLL.Services
             _parserService = parserService;
         }
         public void Execute(bool withExternals, int maxDepth)
-        {   
-            
+        {
+
             PageRelationDto dto;
             while (true)
             {
-                //Console.WriteLine("Thread #{0} started executing", Thread.CurrentThread.Name);
+
                 if (queue.TryDequeue(out dto))
                 {
-                    //Console.WriteLine("Thread #{0} has taken url: {1}", Thread.CurrentThread.Name, dto.Url);
-
+                    Page p;
                     try
                     {
                         var depth = dto.Parent == null ? 0 : dto.Parent.Depth + 1;
@@ -48,30 +47,75 @@ namespace MyParser.BLL.Services
                         {
                             continue;
                         }
-                        var p = _parserService.Parse(dto.Url, withExternals, depth);
-                        p.Parent = dto.Parent;
-                        foreach (var link in p.ChildUlrs)
-                        {
-                            AddToQueue(link, p);
-                        }
+                        p = _parserService.Parse(dto.Url, withExternals, depth);
+
                         lock (_lock)
                         {
-                            //var loadedPage = _unitOfWork.PageRepository.Get(s => s.Url == p.Url).First();
-                            //if (loadedPage != null)
+                            if (dto.Parent != null)
+                            {
+                                p.ParentId = dto.Parent.Id;
+                            }
+
+                            var loadedPage = _unitOfWork.PageRepository.Get(s => s.Url == p.Url).FirstOrDefault();
+                            if (loadedPage != null)
+                            {
+                                p.Id = loadedPage.Id;
+                                // _unitOfWork.PageRepository.Update(p); //TODO: manually update loadedPage with new data
+                                //_unitOfWork.PageRepository.Add(p);
+                                // _unitOfWork.Save();
+                            }
+                            // else
                             //{
-                            //    _unitOfWork.PageRepository.Delete(loadedPage);
-                            //    _unitOfWork.PageRepository.Add(p);
-                            //    _unitOfWork.Save();
-                            //}
+                            var csses = p.Css.ToList();
+                            var images = p.Images.ToList();
+                            p.Css.Clear();
+                            p.Images.Clear();
+                            _unitOfWork.PageRepository.Update(p);
+                            _unitOfWork.Save();
 
-
-                            _unitOfWork.PageRepository.Add(p);
+                            csses.ForEach(c =>
+                            {
+                                var css = _unitOfWork.CssRepository.Get(c.Link);
+                                if (css != null)
+                                {
+                                    p.Css.Add(css);
+                                }
+                                else
+                                {
+                                    _unitOfWork.CssRepository.Add(c);
+                                    p.Css.Add(c);
+                                }
+                            });
+                            images.ForEach(i =>
+                            {
+                                var image = _unitOfWork.ImageRepository.Get(i.Link);
+                                if (image != null)
+                                {
+                                    p.Images.Add(image);
+                                }
+                                else
+                                {
+                                    _unitOfWork.ImageRepository.Add(i);
+                                    p.Images.Add(i);
+                                }
+                            });
+                            _unitOfWork.PageRepository.Update(p);
                             _unitOfWork.Save();
                         }
+                        if (p.Depth != maxDepth)
+                        {
+                            foreach (var link in p.ChildUlrs)
+                            {
+                                AddToQueue(link, p);
+                            }
+                        }
+
+                        // }
                     }
                     catch (Exception ex)
                     {
                         _logger.Error(ex.Message);
+                        Console.WriteLine(ex.Message);
                     }
 
                 }
@@ -82,23 +126,24 @@ namespace MyParser.BLL.Services
                     {
                         break;
                     }
-                }                
+                }
             }
 
 
         }
 
-        public void LoadVisitedLinks()
-        {
-            foreach (var p in _unitOfWork.PageRepository.Get())
-            {
-                visitedPages.Add(p.Url);
-            }
-        }
+        //public void LoadVisitedLinks()
+        //{
+        //    foreach (var p in _unitOfWork.PageRepository.Get())
+        //    {
+        //        visitedPages.Add(p.Url);
+        //    }
+        //}
 
         public void Run(string url, bool withExternals, int depth, int threadNum = 10)
         {
-            LoadVisitedLinks();
+            //LoadVisitedLinks();
+            visitedPages.Clear();
             AddToQueue(url);
 
             _logger.Info("Execution started");
@@ -130,8 +175,8 @@ namespace MyParser.BLL.Services
             {
                 lock (_lock)
                 {
-                    //if (!visitedPages.Contains(url))  //TODO: possibly remove
-                    //{
+                    if (!visitedPages.Contains(url))
+                    {
                         PageRelationDto dto = new PageRelationDto
                         {
                             Url = url,
@@ -139,7 +184,7 @@ namespace MyParser.BLL.Services
                         };
                         queue.Enqueue(dto);
                         visitedPages.Add(url);
-                    //}
+                    }
                 }
             }
         }

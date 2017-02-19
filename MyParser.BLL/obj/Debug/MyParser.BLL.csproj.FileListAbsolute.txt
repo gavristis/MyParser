@@ -43,3 +43,20 @@ C:\Users\Gavristis\Desktop\Internship\MyParser\MyParser.BLL\obj\Debug\MyParser.B
 C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\NLog.config
 C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\NLog.dll
 C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\NLog.xml
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\bin\Debug\NLog.config
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\bin\Debug\MyParser.BLL.dll
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\bin\Debug\MyParser.BLL.pdb
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\bin\Debug\MyParser.DAL.dll
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\bin\Debug\MyParser.Models.dll
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\bin\Debug\NLog.dll
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\bin\Debug\MyParser.DAL.pdb
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\bin\Debug\MyParser.Models.pdb
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\bin\Debug\NLog.xml
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\bin\Debug\EntityFramework.xml
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\obj\Debug\MyParser.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\obj\Debug\MyParser.BLL.dll
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\obj\Debug\MyParser.BLL.pdb

@@ -11,5 +11,6 @@ namespace MyParser.DAL.Interfaces
         Page Get(long id);
         IEnumerable<Page> Get(Func<Page, bool> predicate);
         void Delete(Page item);
+        void Update(Page item);
     }
 }

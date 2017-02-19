@@ -11,6 +11,8 @@ namespace MyParser.Models
         [Key]
         public long Id { get; set; }
 
+        [Index("IX_Url", IsUnique = true)]
+        [MaxLength(500)]
         public string Url { get; set; }
 
         [NotMapped]
@@ -39,6 +41,8 @@ namespace MyParser.Models
         public long Size { get; set; }
 
         //public bool Downloaded { get; set; }
+
+        public long? ParentId { get; set; }
 
         public virtual Page Parent { get; set; }
 

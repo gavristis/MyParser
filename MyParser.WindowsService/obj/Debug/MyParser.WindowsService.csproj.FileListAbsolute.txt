@@ -1,0 +1,8 @@
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.WindowsService\bin\Debug\MyParser.WindowsService.exe.config
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.WindowsService\bin\Debug\MyParser.WindowsService.exe
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.WindowsService\bin\Debug\MyParser.WindowsService.pdb
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.WindowsService\bin\Debug\Topshelf.dll
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.WindowsService\bin\Debug\Topshelf.xml
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.WindowsService\obj\Debug\MyParser.WindowsService.csprojResolveAssemblyReference.cache
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.WindowsService\obj\Debug\MyParser.WindowsService.exe
+C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.WindowsService\obj\Debug\MyParser.WindowsService.pdb

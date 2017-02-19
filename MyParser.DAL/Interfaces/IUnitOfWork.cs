@@ -3,8 +3,8 @@
     public interface IUnitOfWork
     {
         IPageRepository PageRepository { get; }
-
-
+        IImageRepository ImageRepository { get; }
+        ICssRepository CssRepository { get; }
         void Save();
     }
 }

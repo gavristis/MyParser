@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using MyParser.DAL.Interfaces;
 using MyParser.Models;
@@ -23,7 +24,8 @@ namespace MyParser.DAL.Repositories
 
         public void Update(Page item)
         {
-            _db.Entry(item).State = EntityState.Modified;
+            //_db.Entry(item).State = EntityState.Modified;
+            _db.Pages.AddOrUpdate(item);
         }
 
         public void Delete(Page item)
