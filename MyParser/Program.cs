@@ -36,9 +36,9 @@ namespace MyParser
                     //}
                     //else
                     //{
-                    s1.Start();
-                    ts.Run("http://wikipedia.org/", false, 1); //externals, depth, threads
-                    //sts.BuildTree("http://www.ok-studio.com.ua/", 3);
+                    s1.Start(); 
+                    ts.Run("http://www.wikipedia.org/", false, 1); //link, externals, depth, threads
+                    //sts.BuildTree("http://www.ok-studio.com.ua/", 4);
                     s1.Stop();
                     Console.WriteLine(s1.ElapsedMilliseconds);
                     //sts.BuildTree(1);

@@ -14,13 +14,7 @@ namespace MyParser.BLL.Models
 
         public string Url { get; set; }
 
-        public Uri Uri
-        {
-            get
-            {
-                return new Uri(Url);
-            }
-        }
+        public Uri Uri => new Uri(Url);
 
         public HtmlDocument HtmlDocument { get; set; }
 
@@ -36,7 +30,7 @@ namespace MyParser.BLL.Models
 
         public long Size { get; set; }
 
-        //public bool Downloaded { get; set; }
+        //public bool IsInternal { get; set; }
 
         public virtual Page Parent { get; set; }
 

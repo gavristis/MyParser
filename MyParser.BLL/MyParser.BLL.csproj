@@ -57,6 +57,7 @@
     <Compile Include="Interfaces\IStartService.cs" />
     <Compile Include="Interfaces\ISiteTreeService.cs" />
     <Compile Include="Interfaces\ITaskService.cs" />
+    <Compile Include="Models\ChildUrlDto.cs" />
     <Compile Include="Models\PageDto.cs" />
     <Compile Include="Models\PageRelationDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

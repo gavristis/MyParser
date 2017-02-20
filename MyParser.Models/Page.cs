@@ -12,7 +12,7 @@ namespace MyParser.Models
         public long Id { get; set; }
 
         [Index("IX_Url", IsUnique = true)]
-        [MaxLength(500)]
+        [MaxLength(450)]
         public string Url { get; set; }
 
         [NotMapped]
@@ -30,19 +30,21 @@ namespace MyParser.Models
         [NotMapped]
         public virtual ICollection<string> ChildUlrs { get; set; }
 
-        public virtual ICollection<Page> ChildLinks { get; set; } //Fix self-referencing
+        public virtual ICollection<Page> ChildLinks { get; set; }
 
         public virtual ICollection<Css> Css { get; set; }
 
         public virtual ICollection<Image> Images { get; set; }
 
+        public virtual  Site Site { get; set; }
+
         public long LoadTime { get; set; }
 
         public long Size { get; set; }
 
-        //public bool Downloaded { get; set; }
+        //public bool IsInternal { get; set; }
 
-        public long? ParentId { get; set; }
+        public long? ParentId { get; set; }        
 
         public virtual Page Parent { get; set; }
 

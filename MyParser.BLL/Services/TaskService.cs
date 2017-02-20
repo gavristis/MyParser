@@ -60,7 +60,7 @@ namespace MyParser.BLL.Services
                             if (loadedPage != null)
                             {
                                 p.Id = loadedPage.Id;
-                                // _unitOfWork.PageRepository.Update(p); //TODO: manually update loadedPage with new data
+                                // _unitOfWork.PageRepository.Update(p);
                                 //_unitOfWork.PageRepository.Add(p);
                                 // _unitOfWork.Save();
                             }
@@ -114,7 +114,7 @@ namespace MyParser.BLL.Services
                     }
                     catch (Exception ex)
                     {
-                        _logger.Error(ex.Message);
+                        _logger.Error("Url: " + dto.Url + "Error message: "+ ex.Message);
                         Console.WriteLine(ex.Message);
                     }
 
@@ -146,7 +146,7 @@ namespace MyParser.BLL.Services
             visitedPages.Clear();
             AddToQueue(url);
 
-            _logger.Info("Execution started");
+            _logger.Info("Starting Url: "+url +" Execution started");
             _stopwatch.Start();
 
             var threads = new List<Task>();
@@ -165,7 +165,7 @@ namespace MyParser.BLL.Services
             Task.WaitAll(threads.ToArray());
 
             _stopwatch.Stop();
-            _logger.Info("Execution finished, time required: {0} milliseconds", _stopwatch.ElapsedMilliseconds);
+            _logger.Info("Starting Url: {0} Execution finished, time required: {1} milliseconds",url, _stopwatch.ElapsedMilliseconds);
 
         }
 

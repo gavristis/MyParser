@@ -28,8 +28,8 @@ namespace MyParser.BLL.Services
                 var prefix = new string('-', startingPage.Depth);
                 string line = startingPage.Depth + startingPage.Uri.AbsoluteUri;
                 Console.WriteLine("|" + prefix + line);
-                //using (file = new StreamWriter(path + @"\" + startingPage.Uri.Host + ".txt", true))
-                using (file = new StreamWriter(path + @"\SiteTree.txt", true))
+                using (file = new StreamWriter(path + @"\" + startingPage.Uri.GetLeftPart(UriPartial.Authority).Replace("www.", "").Replace("http://", "") +".txt", true))
+                //using (file = new StreamWriter(path + @"\SiteTree.txt", true))
                 {
                     file.WriteLine("|" + prefix + line);
                 }
