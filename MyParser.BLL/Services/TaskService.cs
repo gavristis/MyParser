@@ -18,10 +18,10 @@ namespace MyParser.BLL.Services
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IParserService _parserService;
-        public static HashSet<string> visitedPages = new HashSet<string>();
-        public ConcurrentQueue<PageRelationDto> queue = new ConcurrentQueue<PageRelationDto>();
+        public static HashSet<string> VisitedPages = new HashSet<string>();
+        public ConcurrentQueue<PageRelationDto> Queue = new ConcurrentQueue<PageRelationDto>();
         private readonly object _lock = new object();
-        private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
         private readonly Stopwatch _stopwatch = new Stopwatch();
 
 
@@ -37,7 +37,7 @@ namespace MyParser.BLL.Services
             while (true)
             {
 
-                if (queue.TryDequeue(out dto))
+                if (Queue.TryDequeue(out dto))
                 {
                     Page p;
                     try
@@ -54,6 +54,7 @@ namespace MyParser.BLL.Services
                             if (dto.Parent != null)
                             {
                                 p.ParentId = dto.Parent.Id;
+                                //p.IsInternal = p.Url.Contains(dto.Parent.Uri.GetLeftPart(UriPartial.Authority).Replace("www.", "").Replace("http://", ""));
                             }
 
                             var loadedPage = _unitOfWork.PageRepository.Get(s => s.Url == p.Url).FirstOrDefault();
@@ -114,7 +115,7 @@ namespace MyParser.BLL.Services
                     }
                     catch (Exception ex)
                     {
-                        _logger.Error("Url: " + dto.Url + "Error message: "+ ex.Message);
+                        Logger.Error("Url: " + dto.Url + "Error message: "+ ex.Message);
                         Console.WriteLine(ex.Message);
                     }
 
@@ -122,7 +123,7 @@ namespace MyParser.BLL.Services
                 else
                 {
                     Thread.Sleep(2000);
-                    if (queue.IsEmpty)
+                    if (Queue.IsEmpty)
                     {
                         break;
                     }
@@ -143,11 +144,11 @@ namespace MyParser.BLL.Services
         public void Run(string url, bool withExternals, int depth, int threadNum = 10)
         {
             //LoadVisitedLinks();
-            visitedPages.Clear();
-            //Site site = new Site {Url = url};
+            VisitedPages.Clear();
+            Site site = new Site {Url = url};
             AddToQueue(url);
 
-            _logger.Info("Starting Url: "+url +" Execution started");
+            Logger.Info("Starting Url: "+url +" Execution started");
             _stopwatch.Start();
 
             var threads = new List<Task>();
@@ -166,13 +167,13 @@ namespace MyParser.BLL.Services
             Task.WaitAll(threads.ToArray());
 
             _stopwatch.Stop();
-            _logger.Info("Starting Url: {0} Execution finished, time required: {1} milliseconds",url, _stopwatch.ElapsedMilliseconds);
+            Logger.Info("Starting Url: {0} Execution finished, time required: {1} milliseconds",url, _stopwatch.ElapsedMilliseconds);
 
         }
 
         public void AddToQueue(string url, Page parent)
         {
-            if (!visitedPages.Contains(url))
+            if (!VisitedPages.Contains(url))
             {
                 lock (_lock)
                 {
@@ -183,8 +184,8 @@ namespace MyParser.BLL.Services
                             Url = url,
                             Parent = parent
                         };
-                        queue.Enqueue(dto);
-                        visitedPages.Add(url);
+                        Queue.Enqueue(dto);
+                        VisitedPages.Add(url);
                     //}
                 }
             }

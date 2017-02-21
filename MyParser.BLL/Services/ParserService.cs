@@ -29,7 +29,7 @@ namespace MyParser.BLL.Services
             _pageService.MeasureSize(page);
             page.Css = _cssService.SearchCss(page.HtmlDocument);
             page.Images = _imageService.SearchImages(page.HtmlDocument);
-            page.Depth = depth;
+            page.Depth = depth;            
             if (withExternals == false)
             {
                 _childLinkService.GetInternals(page);

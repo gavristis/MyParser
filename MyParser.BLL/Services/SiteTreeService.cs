@@ -25,10 +25,8 @@ namespace MyParser.BLL.Services
             {
                 ChildPages = startingPage.ChildLinks.ToList();
                 var prefix = new string('-', startingPage.Depth);
-                string line = startingPage.Depth + startingPage.Uri.AbsoluteUri;
-                Console.WriteLine("|" + prefix + line);
+                string line = startingPage.Uri.AbsoluteUri;
                 using (_file = new StreamWriter(_path + @"\" + startingPage.Uri.GetLeftPart(UriPartial.Authority).Replace("www.", "").Replace("http://", "") +".txt", true))
-                //using (file = new StreamWriter(path + @"\SiteTree.txt", true))
                 {
                     _file.WriteLine("|" + prefix + line);
                 }
