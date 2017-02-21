@@ -6,6 +6,5 @@ namespace MyParser.BLL.Interfaces
     {
         void GetInternals(Page link);
         void GetLinks(Page link);
-        bool IsLinkInternal(string parent, string child);
     }
 }

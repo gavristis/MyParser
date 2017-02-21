@@ -91,11 +91,5 @@ namespace MyParser.BLL.Services
                 }
             }
         }
-
-        public bool IsLinkInternal(string parent, string child)
-        {
-            var uri = new Uri(parent);
-            return child.Contains(uri.GetLeftPart(UriPartial.Authority).Replace("www.", "").Replace("http://", ""));
-        }
     }
 }

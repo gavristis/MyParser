@@ -1,8 +1,0 @@
-C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.Service\bin\Debug\MyParser.Service.exe.config
-C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.Service\bin\Debug\MyParser.Service.exe
-C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.Service\bin\Debug\MyParser.Service.pdb
-C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.Service\bin\Debug\Topshelf.dll
-C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.Service\bin\Debug\Topshelf.xml
-C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.Service\obj\Debug\MyParser.Service.csprojResolveAssemblyReference.cache
-C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.Service\obj\Debug\MyParser.Service.exe
-C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.Service\obj\Debug\MyParser.Service.pdb
