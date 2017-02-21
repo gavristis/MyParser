@@ -6,3 +6,25 @@ C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.WindowsService\bin\Debu
 C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.WindowsService\obj\Debug\MyParser.WindowsService.csprojResolveAssemblyReference.cache
 C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.WindowsService\obj\Debug\MyParser.WindowsService.exe
 C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.WindowsService\obj\Debug\MyParser.WindowsService.pdb
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\MyParser.WindowsService.exe.config
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\obj\Debug\MyParser.WindowsService.exe
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\obj\Debug\MyParser.WindowsService.pdb
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\NLog.config
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\MyParser.WindowsService.exe
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\MyParser.WindowsService.pdb
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\MyParser.BLL.dll
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\Topshelf.dll
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\MyParser.Models.dll
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\HtmlAgilityPack.dll
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\MyParser.DAL.dll
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\NLog.dll
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\EntityFramework.dll
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\MyParser.BLL.pdb
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\Topshelf.xml
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\MyParser.Models.pdb
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\HtmlAgilityPack.xml
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\MyParser.DAL.pdb
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\NLog.xml
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\bin\Debug\EntityFramework.xml
+C:\Users\vgavrilov\Documents\Visual Studio 2015\Projects\MyParser\MyParser.WindowsService\obj\Debug\MyParser.WindowsService.csprojResolveAssemblyReference.cache

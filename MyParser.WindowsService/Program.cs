@@ -4,22 +4,41 @@ using System.Linq;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
+using Topshelf;
 
 namespace MyParser.WindowsService
 {
-    static class Program
+    public class TownCrier
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        static void Main()
+        readonly Timer _timer;
+        public TownCrier()
         {
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[]
+            _timer = new Timer(1000) { AutoReset = true };
+            _timer.Elapsed += (sender, eventArgs) => Console.WriteLine("It is {0} and all is well", DateTime.Now);
+        }
+        public void Start() { _timer.Start(); }
+        public void Stop() { _timer.Stop(); }
+    }
+
+    public class Program
+    {
+        public static void Main()
+        {
+            HostFactory.Run(x =>                                 //1
             {
-                new Service1()
-            };
-            ServiceBase.Run(ServicesToRun);
+                x.Service<TownCrier>(s =>                        //2
+                {
+                    s.ConstructUsing(name => new TownCrier());     //3
+                    s.WhenStarted(tc => tc.Start());              //4
+                    s.WhenStopped(tc => tc.Stop());               //5
+                });
+                x.RunAsLocalSystem();                            //6
+
+                x.SetDescription("Sample Topshelf Host");        //7
+                x.SetDisplayName("Stuff");                       //8
+                x.SetServiceName("Stuff");                       //9
+            });                                                  //10
         }
     }
 }

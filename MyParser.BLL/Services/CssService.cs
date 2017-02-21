@@ -22,12 +22,11 @@ namespace MyParser.BLL.Services
                 
                 if (s.Rel == "stylesheet")
                 {
-                    /*if (s.Href.Length > 450)
+                    if (s.Href.Length > 450)
                     {
                         Console.WriteLine("URL {0} is too big.", s.Href);
                         continue;
-                    }*/
-
+                    }
                     res.Add(new Css { Link = s.Href });
                 }
             }

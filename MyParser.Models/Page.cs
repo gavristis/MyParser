@@ -16,13 +16,7 @@ namespace MyParser.Models
         public string Url { get; set; }
 
         [NotMapped]
-        public Uri Uri
-        {
-            get
-            {
-                return new Uri(Url);
-            }
-        } 
+        public Uri Uri => new Uri(Url);
 
         [NotMapped]
         public HtmlDocument HtmlDocument { get; set ; }

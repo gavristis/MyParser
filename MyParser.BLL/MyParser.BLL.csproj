@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IBulkInsertService.cs" />
     <Compile Include="Interfaces\IChildLinkService.cs" />
     <Compile Include="Interfaces\ICssService.cs" />
     <Compile Include="Interfaces\IImageService.cs" />
@@ -61,7 +60,6 @@
     <Compile Include="Models\PageDto.cs" />
     <Compile Include="Models\PageRelationDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\BulkInsertService.cs" />
     <Compile Include="Services\ChildLinkService.cs" />
     <Compile Include="Services\CssService.cs" />
     <Compile Include="Services\ImageService.cs" />

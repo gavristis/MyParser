@@ -11,18 +11,7 @@ namespace MyParser.BLL.Services
         {
             var nodes = link.HtmlDocument.DocumentNode.Descendants("a");
             var links = nodes.Select(s => s.GetAttributeValue("href", null))
-                .Where(s => s != null && s != "#" && s != "/" && !s.Contains(".jpg")).Distinct().ToList();
-
-            foreach (var s in links)
-            {
-                link.ChildUlrs.Add(s);
-            }
-        }
-        public void GetInternals(Page link)
-        {
-            var nodes = link.HtmlDocument.DocumentNode.Descendants("a");
-            var links = nodes.Select(s => s.GetAttributeValue("href", null))
-                .Where(s => s != null && s != "#" && s != "/" && (s.StartsWith("/") || s.Contains(link.Uri.GetLeftPart(UriPartial.Authority).Replace("www.", "").Replace("http://", ""))) && !s.Contains(".jpg") && !s.Contains("mailto:")).Distinct().ToList();
+                .Where(s => s != null && s != "#" && s != "/" && !s.Contains(".jpg") && !s.Contains("mailto:") && !s.Contains("{")).Distinct().ToList();
             foreach (var s in links)
             {
                 if (s.StartsWith("/"))
@@ -30,12 +19,12 @@ namespace MyParser.BLL.Services
 
                     if (s.StartsWith("//"))
                     {
-                        var s1 = link.Uri.Scheme+":" + s;
-                        link.ChildUlrs.Add(s1);                        
+                        var s1 = link.Uri.Scheme + ":" + s;
+                        link.ChildUlrs.Add(s1);
                     }
-                    else 
-                    {                        
-                        var s1 = link.Uri.Scheme+"://"+link.Uri.GetLeftPart(UriPartial.Authority).Replace("www.", "").Replace("http://", "") + s;
+                    else
+                    {
+                        var s1 = link.Uri.Scheme + "://" + link.Uri.Host + s;
                         //link.ChildLinks.Add(s1);
                         link.ChildUlrs.Add(s1);
                     }
@@ -50,7 +39,49 @@ namespace MyParser.BLL.Services
                     }
                     else
                     {
-                        var s2 = link.Uri.Scheme + "://" + link.Uri.GetLeftPart(UriPartial.Authority).Replace("www.", "").Replace("http://", "") + s;
+                        var s2 = link.Uri.Scheme + "://" + link.Uri.Host + s;
+                        link.ChildUlrs.Add(s2);
+                    }
+                }
+                else
+                {
+                    link.ChildUlrs.Add(s);
+                }
+            }
+        }
+        public void GetInternals(Page link)
+        {
+            var nodes = link.HtmlDocument.DocumentNode.Descendants("a");
+            var links = nodes.Select(s => s.GetAttributeValue("href", null))
+                .Where(s => s != null && s != "#" && s != "/" && (s.StartsWith("/") || s.Contains(link.Uri.GetLeftPart(UriPartial.Authority).Replace("www.", "").Replace("http://", ""))) && !s.Contains(".jpg") && !s.Contains("mailto:") && !s.Contains("{")).Distinct().ToList();
+            foreach (var s in links)
+            {
+                if (s.StartsWith("/"))
+                {
+
+                    if (s.StartsWith("//"))
+                    {
+                        var s1 = link.Uri.Scheme+":" + s;
+                        link.ChildUlrs.Add(s1);                        
+                    }
+                    else 
+                    {                        
+                        var s1 = link.Uri.Scheme+"://"+link.Uri.Host + s;
+                        //link.ChildLinks.Add(s1);
+                        link.ChildUlrs.Add(s1);
+                    }
+
+                }
+                else if (!s.StartsWith("http"))
+                {
+                    if (s.Contains(link.Uri.GetLeftPart(UriPartial.Authority).Replace("www.", "").Replace("http://", "")))
+                    {
+                        var s1 = link.Uri.Scheme + "://" + s;
+                        link.ChildUlrs.Add(s1);
+                    }
+                    else
+                    {
+                        var s2 = link.Uri.Scheme + "://" + link.Uri.Host + s;
                         link.ChildUlrs.Add(s2);
                     }
                 }

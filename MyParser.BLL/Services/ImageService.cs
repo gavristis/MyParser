@@ -18,14 +18,13 @@ namespace MyParser.BLL.Services
 
             foreach (var img in images)
             {
-                /*if (img.Length > 450)
+                if (img.Length > 450)
                 {
                     Console.WriteLine("URL {0} is too big.", img);
                     continue;
-                }*/
+                }
                 res.Add(new Image { Link = img });
             }
-
             return res;
         }
     }

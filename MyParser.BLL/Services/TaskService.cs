@@ -42,7 +42,7 @@ namespace MyParser.BLL.Services
                     Page p;
                     try
                     {
-                        var depth = dto.Parent == null ? 0 : dto.Parent.Depth + 1;
+                        var depth = dto.Parent?.Depth + 1 ?? 0;
                         if (depth > maxDepth)
                         {
                             continue;
@@ -144,6 +144,7 @@ namespace MyParser.BLL.Services
         {
             //LoadVisitedLinks();
             visitedPages.Clear();
+            //Site site = new Site {Url = url};
             AddToQueue(url);
 
             _logger.Info("Starting Url: "+url +" Execution started");
@@ -175,8 +176,8 @@ namespace MyParser.BLL.Services
             {
                 lock (_lock)
                 {
-                    if (!visitedPages.Contains(url))
-                    {
+                    //if (!visitedPages.Contains(url))
+                    //{
                         PageRelationDto dto = new PageRelationDto
                         {
                             Url = url,
@@ -184,7 +185,7 @@ namespace MyParser.BLL.Services
                         };
                         queue.Enqueue(dto);
                         visitedPages.Add(url);
-                    }
+                    //}
                 }
             }
         }

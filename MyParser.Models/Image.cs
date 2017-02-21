@@ -10,8 +10,8 @@ namespace MyParser.Models
 
         public virtual ICollection<Page> Pages { get; set; }
 
-       /* [Index("IX_Image_Link", IsUnique = true)]
-        [MaxLength(450)]*/
+        [Index("IX_Image_Link", IsUnique = true)]
+        [MaxLength(450)]
         public string Link { get; set; }
     }
 }
