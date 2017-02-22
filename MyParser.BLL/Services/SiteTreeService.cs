@@ -25,10 +25,9 @@ namespace MyParser.BLL.Services
             {
                 ChildPages = startingPage.ChildLinks.ToList();
                 var prefix = new string('-', startingPage.Depth);
-                string line = startingPage.Uri.AbsoluteUri;
-                using (_file = new StreamWriter(_path + @"\" + startingPage.Uri.GetLeftPart(UriPartial.Authority).Replace("www.", "").Replace("http://", "") +".txt", true))
+                using (_file = new StreamWriter(_path + @"\" + new Uri(startingPage.Site.Url).Host +".txt", true))
                 {
-                    _file.WriteLine("|" + prefix + line);
+                    _file.WriteLine("|" + prefix + startingPage.Uri.AbsoluteUri);
                 }
                 
                 foreach (var page in ChildPages)
@@ -43,10 +42,14 @@ namespace MyParser.BLL.Services
 
         public void BuildTree(int maxDepth)
         {
-            var pages = _unitOfWork.PageRepository.Get();
-            foreach (var page in pages)
+            var sites = _unitOfWork.SiteRepository.Get(s=>s.Url!=null);
+            foreach (var site in sites)
             {
-                BuildTree(page, maxDepth);
+                var startingPage = site.Pages.FirstOrDefault(p => p.Depth == 0);
+                if (startingPage!=null)
+                {
+                    BuildTree(startingPage, maxDepth);
+                }                
             }
         }
         public void BuildTree(string startingUrl, int maxDepth)

@@ -10,6 +10,7 @@ namespace MyParser.DAL.Interfaces
 {
     public interface ISiteRepository
     {
-        void Add(Site site);
+        IEnumerable<Site> Get(Func<Site, bool> predicate);
+        IEnumerable<Site> Get();
     }
 }

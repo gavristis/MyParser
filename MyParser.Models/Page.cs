@@ -11,7 +11,7 @@ namespace MyParser.Models
         [Key]
         public long Id { get; set; }
 
-        [Index("IX_Url", IsUnique = true)]
+        [Index("IX_Url", IsUnique = false)]
         [MaxLength(450)]
         public string Url { get; set; }
 
@@ -36,7 +36,7 @@ namespace MyParser.Models
 
         public long Size { get; set; }
 
-        //public bool IsInternal { get; set; } = true;
+        public bool IsInternal { get; set; } = true;
 
         public long? ParentId { get; set; }        
 

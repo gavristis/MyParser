@@ -11,6 +11,7 @@ using MyParser.BLL.Models;
 using MyParser.DAL.Interfaces;
 using MyParser.Models;
 using NLog;
+using NLog.LayoutRenderers.Wrappers;
 
 namespace MyParser.BLL.Services
 {
@@ -53,20 +54,30 @@ namespace MyParser.BLL.Services
                         {
                             if (dto.Parent == null)
                             {
-                                Site site = new Site { Url = dto.Url };
-                                p.Site = site;
-
+                                var dto1 = dto;
+                                var existingSite = _unitOfWork.SiteRepository.Get(s => s.Url == dto1.Url).FirstOrDefault();
+                                if (existingSite == null)
+                                {
+                                    Site site = new Site {Url = dto.Url};
+                                    p.Site = site;
+                                }
+                                else
+                                {
+                                    p.Site = existingSite;
+                                }
                             }
                             else
-                            {
+                            {                                
                                 p.ParentId = dto.Parent.Id;
+                                p.Site = dto.Parent.Site;
                                 if (
-                                    p.Url.Contains(
-                                        dto.Parent.Uri.GetLeftPart(UriPartial.Authority)
+                                    !p.Url.Contains(
+                                        new Uri(p.Site.Url).GetLeftPart(UriPartial.Authority)
                                             .Replace("www.", "")
+                                            .Replace("https://", "")
                                             .Replace("http://", "")))
                                 {
-                                    p.Site = dto.Parent.Site;
+                                    p.IsInternal = false;
                                 }
 
                             }

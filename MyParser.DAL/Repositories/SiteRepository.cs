@@ -17,9 +17,13 @@ namespace MyParser.DAL.Repositories
             _db = db;
         }
 
-        public void Add(Site site)
+        public IEnumerable<Site> Get(Func<Site, bool> predicate)
         {
-            _db.Sites.Add(site);
+            return _db.Sites.Where(predicate);
+        }
+        public IEnumerable<Site> Get()
+        {
+            return _db.Sites;
         }
     }
 }

@@ -7,6 +7,7 @@ namespace MyParser.DAL.Repositories
         private IPageRepository _pageRepository;
         private IImageRepository _imageRepository;
         private ICssRepository _cssRepository;
+        private ISiteRepository _siteRepository;
 
         private readonly MyDbContext _db;
 
@@ -26,6 +27,10 @@ namespace MyParser.DAL.Repositories
         public ICssRepository CssRepository
         {
             get { return _cssRepository ?? (_cssRepository = new CssRepository(_db)); }
+        }
+        public ISiteRepository SiteRepository
+        {
+            get { return _siteRepository ?? (_siteRepository = new SiteRepository(_db)); }
         }
 
         public void Save()

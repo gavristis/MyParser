@@ -20,24 +20,18 @@ namespace MyParser.BLL.Services
         }
         public Page Parse(string url, bool withExternals, int depth)
         {
-            Page page = new Page();
-            page.HtmlDocument = new HtmlDocument();
-            page.ChildUlrs = new List<string>();
-            page.Url = url;
-            _pageService.MeasureTime(page);
-            //page.Html = page.HtmlDocument.DocumentNode.OuterHtml;                        
+            Page page = new Page
+            {
+                HtmlDocument = new HtmlDocument(),
+                ChildUlrs = new List<string>(),
+                Url = url
+            };
+            _pageService.MeasureTime(page);                      
             _pageService.MeasureSize(page);
             page.Css = _cssService.SearchCss(page.HtmlDocument);
             page.Images = _imageService.SearchImages(page.HtmlDocument);
-            page.Depth = depth;            
-            if (withExternals == false)
-            {
-                _childLinkService.GetInternals(page);
-            }
-            else
-            {
-                _childLinkService.GetLinks(page);
-            }
+            page.Depth = depth;
+            _childLinkService.GetLinks(page, withExternals);            
             return page;
         }
     }
