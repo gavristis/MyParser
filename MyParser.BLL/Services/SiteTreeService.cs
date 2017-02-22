@@ -54,7 +54,7 @@ namespace MyParser.BLL.Services
         }
         public void BuildTree(string startingUrl, int maxDepth)
         {
-            var startingPage = _unitOfWork.PageRepository.Get(s => s.Uri.AbsoluteUri == startingUrl).First();            
+            var startingPage = _unitOfWork.PageRepository.Get(startingUrl);            
             
             //startingPage.Depth = 0;
             BuildTree(startingPage, maxDepth);

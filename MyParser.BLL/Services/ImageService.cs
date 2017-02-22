@@ -11,10 +11,11 @@ namespace MyParser.BLL.Services
     {
         public List<Image> SearchImages(HtmlDocument doc)
         {            
-            var  res = new List<Image>();
-            var nodes = doc.DocumentNode.Descendants("img");
-            var images =
-                nodes.Select(s => s.GetAttributeValue("src", null)).Where(s => !string.IsNullOrEmpty(s)).Distinct().ToList();
+            var res = new List<Image>();
+            var images = doc.DocumentNode.Descendants("img")
+                .Select(s => s.GetAttributeValue("src", null))
+                .Where(s => !string.IsNullOrEmpty(s))
+                .Distinct();
 
             foreach (var img in images)
             {
@@ -23,8 +24,10 @@ namespace MyParser.BLL.Services
                     Console.WriteLine("URL {0} is too big.", img);
                     continue;
                 }
+
                 res.Add(new Image { Link = img });
             }
+
             return res;
         }
     }

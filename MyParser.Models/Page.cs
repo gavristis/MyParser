@@ -8,15 +8,28 @@ namespace MyParser.Models
 {
     public class Page
     {
+        private Uri _uri;
+
         [Key]
         public long Id { get; set; }
 
-        [Index("IX_Url", IsUnique = false)]
+        [Index("IX_Url", IsUnique = true)]
         [MaxLength(450)]
         public string Url { get; set; }
 
         [NotMapped]
-        public Uri Uri => new Uri(Url);
+        public Uri Uri
+        {
+            get
+            {
+                if (_uri == null)
+                {
+                    _uri = new Uri(Url);
+                }
+
+                return _uri;
+            }
+        }
 
         [NotMapped]
         public HtmlDocument HtmlDocument { get; set ; }
@@ -29,6 +42,8 @@ namespace MyParser.Models
         public virtual ICollection<Css> Css { get; set; }
 
         public virtual ICollection<Image> Images { get; set; }
+
+        //public long SiteId { get; set; }
 
         public virtual  Site Site { get; set; }
 

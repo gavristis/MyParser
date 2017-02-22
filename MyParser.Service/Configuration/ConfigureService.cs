@@ -1,14 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using StructureMap;
 using Topshelf;
 
 namespace MyParser.Service.Configuration
 {
     internal static class ConfigureService
     {
+        public static readonly IContainer ServiceContainer;
+
+        static ConfigureService()
+        {
+            ServiceContainer = Container.For<ConsoleRegistry>();
+        }
+
         internal static void Configure()
         {
             HostFactory.Run(configure =>
@@ -16,14 +19,19 @@ namespace MyParser.Service.Configuration
                 configure.Service<MyService>(service =>
                 {
                     service.ConstructUsing(s => new MyService());
-                    service.WhenStarted(s => s.Start());
+                    service.WhenStarted(s =>
+                    {
+                        s.Start();
+                    });
                     service.WhenStopped(s => s.Stop());
                 });
                 //Setup Account that window service use to run.  
-                configure.RunAsLocalSystem();
                 configure.SetServiceName("MyParser.Service");
                 configure.SetDisplayName("MyParser.Service");
                 configure.SetDescription("My .Net windows service with Topshelf for parsing HTML pages");
+
+                configure.StartAutomaticallyDelayed();
+                configure.RunAsNetworkService();
             });
         }
     }

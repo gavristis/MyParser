@@ -33,8 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="StructureMap, Version=4.4.2.472, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StructureMap.4.4.2\lib\net45\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,12 +54,29 @@
   <ItemGroup>
     <Compile Include="Configuration\ConfigureService.cs" />
     <Compile Include="Configuration\MyService.cs" />
+    <Compile Include="Configuration\StructureMapInstanceProvider.cs" />
+    <Compile Include="Configuration\StructureMapServiceBehavior.cs" />
+    <Compile Include="Configuration\StructureMapServiceHost.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IParseService.cs" />
+    <Compile Include="Services\ParseService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyParser.BLL\MyParser.BLL.csproj">
+      <Project>{01C5CEC1-F3A7-437B-AE0F-04FFB36E9404}</Project>
+      <Name>MyParser.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyParser\MyParser.Console.csproj">
+      <Project>{b46794cc-8d4f-4b91-b746-9a974845f38a}</Project>
+      <Name>MyParser.Console</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

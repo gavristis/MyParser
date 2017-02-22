@@ -137,3 +137,34 @@
 2017-02-22 17:51:06.9410|ERROR|MyParser.BLL.Services.TaskService|Url: https://vk.com/like?act=publish&object=wall-16507464_5736&from=ok_studioError message: The remote server returned an error: (404) Not Found.
 2017-02-22 17:51:07.7492|ERROR|MyParser.BLL.Services.TaskService|Url: https://vk.com/like?act=add&object=wall-16507464_5735&from=ok_studio&hash=b1e2b6defac7605e96&wide=1Error message: The remote server returned an error: (404) Not Found.
 2017-02-22 17:51:07.7851|ERROR|MyParser.BLL.Services.TaskService|Url: https://vk.com/like?act=publish&object=wall-16507464_5735&from=ok_studioError message: The remote server returned an error: (404) Not Found.
+2017-02-22 22:42:42.8028|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.wikipedia.org/ Execution started
+2017-02-22 22:48:47.1055|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.wikipedia.org/ Execution started
+2017-02-22 23:00:03.2319|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.wikipedia.org/ Execution started
+2017-02-22 23:15:42.3169|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.wikipedia.org/ Execution started
+2017-02-22 23:20:59.7039|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.wikipedia.org/ Execution started
+2017-02-22 23:22:40.7232|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.wikipedia.org/ Execution started
+2017-02-22 23:25:04.1470|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.wikipedia.org/ Execution started
+2017-02-22 23:48:28.9251|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.wikipedia.org/ Execution started
+2017-02-22 23:49:34.1625|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.wikipedia.org/ Execution started
+2017-02-23 00:06:01.8077|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution started
+2017-02-23 00:06:15.9610|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/zal-201Error message: Ссылка на объект не указывает на экземпляр объекта.
+2017-02-23 00:06:16.1496|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/zal-201/raspisanie-zanyatosti-zala-201Error message: Ссылка на объект не указывает на экземпляр объекта.
+2017-02-23 00:06:16.4161|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/ceny-na-arendu-fotostudiiError message: Ссылка на объект не указывает на экземпляр объекта.
+2017-02-23 00:06:16.7501|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/pravila-arendyError message: Ссылка на объект не указывает на экземпляр объекта.
+2017-02-23 00:06:17.0282|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/testimonialsError message: Ссылка на объект не указывает на экземпляр объекта.
+2017-02-23 00:06:17.4442|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/kontaktyError message: Ссылка на объект не указывает на экземпляр объекта.
+2017-02-23 00:06:17.6802|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/zal-313Error message: Ссылка на объект не указывает на экземпляр объекта.
+2017-02-23 00:06:17.7313|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/instruktazhError message: Ссылка на объект не указывает на экземпляр объекта.
+2017-02-23 00:06:17.7808|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/zal-313/raspisanie-zanyatosti-zala-313Error message: Ссылка на объект не указывает на экземпляр объекта.
+2017-02-23 00:06:17.8843|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/newsError message: Ссылка на объект не указывает на экземпляр объекта.
+2017-02-23 00:06:18.0563|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/izmeneniya-arendy-studii-s-1-fevralyaError message: Ссылка на объект не указывает на экземпляр объекта.
+2017-02-23 00:06:18.0848|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/novye-cvetnye-filtryError message: Ссылка на объект не указывает на экземпляр объекта.
+2017-02-23 00:06:18.9999|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/zabronirovat-studiyuError message: Ссылка на объект не указывает на экземпляр объекта.
+2017-02-23 00:06:21.1407|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution finished, time required: 19249 milliseconds
+2017-02-23 00:06:46.5785|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution started
+2017-02-23 00:09:21.4948|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution started
+2017-02-23 00:10:18.3206|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution finished, time required: 56670 milliseconds
+2017-02-23 00:10:30.5471|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution started
+2017-02-23 00:11:25.7056|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution finished, time required: 55055 milliseconds
+2017-02-23 00:11:30.0667|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution started
+2017-02-23 00:12:13.3417|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution finished, time required: 98257 milliseconds

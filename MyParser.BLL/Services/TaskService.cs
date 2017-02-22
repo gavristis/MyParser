@@ -43,7 +43,7 @@ namespace MyParser.BLL.Services
                     Page p;
                     try
                     {
-                        var depth = dto.Parent?.Depth + 1 ?? 0;
+                        var depth = dto?.Depth + 1 ?? 0;
                         if (depth > maxDepth)
                         {
                             continue;
@@ -52,13 +52,13 @@ namespace MyParser.BLL.Services
 
                         lock (_lock)
                         {
-                            if (dto.Parent == null)
+                            if (dto.ParentUrl == null)
                             {
-                                var dto1 = dto;
-                                var existingSite = _unitOfWork.SiteRepository.Get(s => s.Url == dto1.Url).FirstOrDefault();
+                                var url = dto.Url;
+                                var existingSite = _unitOfWork.SiteRepository.Get(s => s.Url == url).FirstOrDefault();
                                 if (existingSite == null)
                                 {
-                                    Site site = new Site {Url = dto.Url};
+                                    Site site = new Site {Url = url};
                                     p.Site = site;
                                 }
                                 else
@@ -67,9 +67,10 @@ namespace MyParser.BLL.Services
                                 }
                             }
                             else
-                            {                                
-                                p.ParentId = dto.Parent.Id;
-                                p.Site = dto.Parent.Site;
+                            {
+                                var parent = _unitOfWork.PageRepository.Get(dto.ParentUrl);                     
+                                p.ParentId = parent.Id;
+                                p.Site = parent.Site;
                                 if (
                                     !p.Url.Contains(
                                         new Uri(p.Site.Url).GetLeftPart(UriPartial.Authority)
@@ -82,7 +83,7 @@ namespace MyParser.BLL.Services
 
                             }
 
-                            var loadedPage = _unitOfWork.PageRepository.Get(s => s.Url == p.Url).FirstOrDefault();
+                            var loadedPage = _unitOfWork.PageRepository.Get(p.Url);
                             if (loadedPage != null)
                             {
                                 p.Id = loadedPage.Id;
@@ -206,7 +207,8 @@ namespace MyParser.BLL.Services
                         PageRelationDto dto = new PageRelationDto
                         {
                             Url = url,
-                            Parent = parent
+                            Depth = parent?.Depth,
+                            ParentUrl = parent?.Url
                         };
                         Queue.Enqueue(dto);
                         VisitedPages.Add(url);

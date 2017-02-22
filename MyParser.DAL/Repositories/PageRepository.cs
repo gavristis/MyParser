@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Linq.Expressions;
 using MyParser.DAL.Interfaces;
 using MyParser.Models;
 
@@ -49,9 +50,14 @@ namespace MyParser.DAL.Repositories
             return _db.Pages.Find(id);
         }
 
-        public IEnumerable<Page> Get(Func<Page, bool> predicate)
+        public IQueryable<Page> Get(Expression<Func<Page, bool>> predicate)
         {
             return _db.Pages.Where(predicate);
+        }
+
+        public Page Get(string url)
+        {
+            return Get(p => p.Url == url).FirstOrDefault();
         }
     }
 }

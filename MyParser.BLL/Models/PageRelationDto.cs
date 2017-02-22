@@ -4,7 +4,9 @@ namespace MyParser.BLL.Models
 {
     public class PageRelationDto
     {
-        public Page Parent { get; set; }
+        public int? Depth { get; set; }
+
+        public string ParentUrl { get; set; }
 
         public string Url { get; set; }
     }
