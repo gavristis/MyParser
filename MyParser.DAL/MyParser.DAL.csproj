@@ -56,6 +56,7 @@
     <Compile Include="Interfaces\ICssRepository.cs" />
     <Compile Include="Interfaces\IImageRepository.cs" />
     <Compile Include="Interfaces\IPageRepository.cs" />
+    <Compile Include="Interfaces\ISiteRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="MyDbInitializer.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Repositories\CssRepository.cs" />
     <Compile Include="Repositories\ImageRepository.cs" />
     <Compile Include="Repositories\PageRepository.cs" />
+    <Compile Include="Repositories\SiteRepository.cs" />
     <Compile Include="Repositories\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -47,5 +47,6 @@ namespace MyParser.DAL
         public virtual DbSet<Page> Pages { get; set; }
         public virtual DbSet<Css> Csses { get; set; }
         public virtual DbSet<Image> Images { get; set; }
+        public virtual DbSet<Site> Sites { get; set; }
     }
 }

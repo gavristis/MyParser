@@ -256,3 +256,52 @@
 2017-02-21 17:00:23.7070|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.wikipedia.org/ Execution finished, time required: 372751 milliseconds
 2017-02-21 17:00:51.5527|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.wikipedia.org/ Execution started
 2017-02-21 17:06:20.9979|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.wikipedia.org/ Execution finished, time required: 329428 milliseconds
+2017-02-21 17:40:09.5152|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.wikipedia.org/ Execution started
+2017-02-21 17:40:35.7302|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.wikipedia.org/Error message: Cannot drop database "sample" because it is currently in use.
+2017-02-21 17:40:37.7326|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.wikipedia.org/ Execution finished, time required: 28200 milliseconds
+2017-02-21 17:41:03.6029|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution started
+2017-02-21 17:41:47.0133|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution finished, time required: 43394 milliseconds
+2017-02-22 11:37:30.3763|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution started
+2017-02-22 11:39:56.1043|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution started
+2017-02-22 11:40:05.9092|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/zal-201Error message: Object reference not set to an instance of an object.
+2017-02-22 11:40:06.0012|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/zal-201/raspisanie-zanyatosti-zala-201Error message: Object reference not set to an instance of an object.
+2017-02-22 11:40:07.1187|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/zal-313Error message: Object reference not set to an instance of an object.
+2017-02-22 11:40:07.2258|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/zal-313/raspisanie-zanyatosti-zala-313Error message: Object reference not set to an instance of an object.
+2017-02-22 11:40:07.3177|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/ceny-na-arendu-fotostudiiError message: Object reference not set to an instance of an object.
+2017-02-22 11:40:07.4227|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/pravila-arendyError message: Object reference not set to an instance of an object.
+2017-02-22 11:40:07.5119|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/testimonialsError message: Object reference not set to an instance of an object.
+2017-02-22 11:40:07.5647|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/kontaktyError message: Object reference not set to an instance of an object.
+2017-02-22 11:40:07.6439|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/instruktazhError message: Object reference not set to an instance of an object.
+2017-02-22 11:40:07.7401|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/newsError message: Object reference not set to an instance of an object.
+2017-02-22 11:40:07.8341|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/izmeneniya-arendy-studii-s-1-fevralyaError message: Object reference not set to an instance of an object.
+2017-02-22 11:40:07.9332|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/novye-cvetnye-filtryError message: Object reference not set to an instance of an object.
+2017-02-22 11:40:09.1780|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/zabronirovat-studiyuError message: Object reference not set to an instance of an object.
+2017-02-22 11:42:53.5131|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution started
+2017-02-22 11:43:03.2376|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/zal-201Error message: Object reference not set to an instance of an object.
+2017-02-22 11:43:03.5768|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/zal-201/raspisanie-zanyatosti-zala-201Error message: Object reference not set to an instance of an object.
+2017-02-22 11:43:04.9001|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/zal-313Error message: Object reference not set to an instance of an object.
+2017-02-22 11:43:04.9701|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/zal-313/raspisanie-zanyatosti-zala-313Error message: Object reference not set to an instance of an object.
+2017-02-22 11:43:05.0506|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/ceny-na-arendu-fotostudiiError message: Object reference not set to an instance of an object.
+2017-02-22 11:43:05.4348|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/pravila-arendyError message: Object reference not set to an instance of an object.
+2017-02-22 11:43:05.5294|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/testimonialsError message: Object reference not set to an instance of an object.
+2017-02-22 11:43:05.5834|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/kontaktyError message: Object reference not set to an instance of an object.
+2017-02-22 11:43:05.6665|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/instruktazhError message: Object reference not set to an instance of an object.
+2017-02-22 11:43:05.8261|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/newsError message: Object reference not set to an instance of an object.
+2017-02-22 11:43:05.8781|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/izmeneniya-arendy-studii-s-1-fevralyaError message: Object reference not set to an instance of an object.
+2017-02-22 11:43:05.9412|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/novye-cvetnye-filtryError message: Object reference not set to an instance of an object.
+2017-02-22 11:43:06.8212|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/zabronirovat-studiyuError message: Object reference not set to an instance of an object.
+2017-02-22 11:43:08.8233|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution finished, time required: 15290 milliseconds
+2017-02-22 11:43:59.8411|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution started
+2017-02-22 11:45:38.7995|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution started
+2017-02-22 11:48:26.2975|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution finished, time required: 167475 milliseconds
+2017-02-22 11:52:52.3299|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution started
+2017-02-22 11:53:36.3401|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution finished, time required: 43992 milliseconds
+2017-02-22 11:53:49.5378|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution started
+2017-02-22 11:54:33.7443|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution finished, time required: 44188 milliseconds
+2017-02-22 12:09:16.6478|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution started
+2017-02-22 12:09:42.8446|ERROR|MyParser.BLL.Services.TaskService|Url: http://www.ok-studio.com.ua/Error message: Cannot drop database "sample" because it is currently in use.
+2017-02-22 12:09:44.8474|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution finished, time required: 28182 milliseconds
+2017-02-22 12:09:54.0264|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution started
+2017-02-22 12:10:39.8968|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution finished, time required: 45847 milliseconds
+2017-02-22 12:12:45.6992|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution started
+2017-02-22 12:13:30.3132|INFO|MyParser.BLL.Services.TaskService|Starting Url: http://www.ok-studio.com.ua/ Execution finished, time required: 44591 milliseconds

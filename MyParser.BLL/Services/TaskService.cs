@@ -51,10 +51,24 @@ namespace MyParser.BLL.Services
 
                         lock (_lock)
                         {
-                            if (dto.Parent != null)
+                            if (dto.Parent == null)
+                            {
+                                Site site = new Site { Url = dto.Url };
+                                p.Site = site;
+
+                            }
+                            else
                             {
                                 p.ParentId = dto.Parent.Id;
-                                //p.IsInternal = p.Url.Contains(dto.Parent.Uri.GetLeftPart(UriPartial.Authority).Replace("www.", "").Replace("http://", ""));
+                                if (
+                                    p.Url.Contains(
+                                        dto.Parent.Uri.GetLeftPart(UriPartial.Authority)
+                                            .Replace("www.", "")
+                                            .Replace("http://", "")))
+                                {
+                                    p.Site = dto.Parent.Site;
+                                }
+
                             }
 
                             var loadedPage = _unitOfWork.PageRepository.Get(s => s.Url == p.Url).FirstOrDefault();
@@ -145,7 +159,6 @@ namespace MyParser.BLL.Services
         {
             //LoadVisitedLinks();
             VisitedPages.Clear();
-            Site site = new Site {Url = url};
             AddToQueue(url);
 
             Logger.Info("Starting Url: "+url +" Execution started");

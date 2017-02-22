@@ -36,7 +36,7 @@ namespace MyParser.Models
 
         public long Size { get; set; }
 
-        //public bool IsInternal { get; set; } = false;
+        //public bool IsInternal { get; set; } = true;
 
         public long? ParentId { get; set; }        
 
