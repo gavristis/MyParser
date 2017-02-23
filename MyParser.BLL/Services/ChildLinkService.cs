@@ -8,7 +8,7 @@ namespace MyParser.BLL.Services
 {
     public class ChildLinkService : IChildLinkService
     {
-        public void GetLinks(Page link, bool withExternal)//move => bool getinternals
+        public void GetLinks(Page link, bool withExternal)
         {
             var nodes = link.HtmlDocument.DocumentNode.Descendants("a");
             IEnumerable<string> links = new List<string>();
@@ -17,7 +17,7 @@ namespace MyParser.BLL.Services
                 links = nodes.Select(s => s.GetAttributeValue("href", null))
                     .Where(
                         s =>
-                            s != null && s != "#" && s != "/" && !s.Contains(".jpg") && !s.Contains("mailto:") &&
+                            s != null && s != "#" && s != "/" && s.Length < 400 &&!s.Contains(".jpg") && !s.Contains("mailto:") &&
                             !s.Contains(".pdf") && !s.Contains("{") && !s.Contains("..")).Distinct();
 
             }
@@ -26,7 +26,7 @@ namespace MyParser.BLL.Services
                 links = nodes.Select(s => s.GetAttributeValue("href", null))
                     .Where(
                         s =>
-                            s != null && s != "#" && s != "/" &&
+                            s != null && s != "#" && s != "/" && s.Length < 400 &&
                             (s.StartsWith("/") ||
                              s.Contains(
                                  link.Uri.GetLeftPart(UriPartial.Authority)

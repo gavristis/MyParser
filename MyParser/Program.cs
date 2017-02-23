@@ -37,7 +37,7 @@ namespace MyParser
                     //else
                     //{
                     s1.Start(); 
-                    ts.Run("http://www.ok-studio.com.ua/", false, 4); //link, externals, depth, threads
+                    ts.Run("http://www.deezer.com/", false, 6); //link, externals, depth, threads
                     //sts.BuildTree("http://www.ok-studio.com.ua/", 4);
                     s1.Stop();
                     Console.WriteLine(s1.ElapsedMilliseconds);

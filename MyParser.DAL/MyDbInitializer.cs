@@ -2,7 +2,7 @@
 
 namespace MyParser.DAL
 {
-    public class MyDbInitializer : DropCreateDatabaseAlways<MyDbContext>
+    public class MyDbInitializer : DropCreateDatabaseIfModelChanges<MyDbContext>
     {
         //protected override void Seed(MyDbContext context)
         //{
