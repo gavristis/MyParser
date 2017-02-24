@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyParser.Models", "MyParser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyParser.Service", "MyParser.Service\MyParser.Service.csproj", "{134F27F9-C90B-4F1A-A88D-5256BD80DDAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyParser.UnitTests", "MyParser.UnitTests\MyParser.UnitTests.csproj", "{24B446F6-A04C-434B-98BE-42CE6326E355}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{134F27F9-C90B-4F1A-A88D-5256BD80DDAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{134F27F9-C90B-4F1A-A88D-5256BD80DDAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{134F27F9-C90B-4F1A-A88D-5256BD80DDAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24B446F6-A04C-434B-98BE-42CE6326E355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24B446F6-A04C-434B-98BE-42CE6326E355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24B446F6-A04C-434B-98BE-42CE6326E355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24B446F6-A04C-434B-98BE-42CE6326E355}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

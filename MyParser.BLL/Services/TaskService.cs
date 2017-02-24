@@ -141,7 +141,7 @@ namespace MyParser.BLL.Services
                     }
                     catch (Exception ex)
                     {
-                        Logger.Error("Url: " + dto.Url + "Error message: "+ ex.Message);
+                        Logger.Error("The following Url: " + dto.Url + " returned error message: "+ ex.Message);
                         Console.WriteLine(ex.Message);
                     }
 

@@ -17,7 +17,8 @@ namespace MyParser.BLL.Services
                 links = nodes.Select(s => s.GetAttributeValue("href", null))
                     .Where(
                         s =>
-                            s != null && s != "#" && s != "/" && s.Length < 400 &&!s.Contains(".jpg") && !s.Contains("mailto:") &&
+                            s != null && s != "#" && s != "/" && s.Length < 400 && !s.Contains(".jpg") &&
+                            !s.Contains("mailto:") &&
                             !s.Contains(".pdf") && !s.Contains("{") && !s.Contains("..")).Distinct();
 
             }
