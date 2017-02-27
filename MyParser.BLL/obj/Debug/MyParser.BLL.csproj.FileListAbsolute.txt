@@ -43,3 +43,20 @@ C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\bin\Debug\EntityFra
 C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\obj\Debug\MyParser.BLL.csprojResolveAssemblyReference.cache
 C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\obj\Debug\MyParser.BLL.dll
 C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.BLL\obj\Debug\MyParser.BLL.pdb
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\NLog.config
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\MyParser.BLL.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\MyParser.BLL.pdb
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\HtmlAgilityPack.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\MyParser.DAL.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\MyParser.Models.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\NLog.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\EntityFramework.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\MyParser.DAL.pdb
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\MyParser.Models.pdb
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\HtmlAgilityPack.xml
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\NLog.xml
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.BLL\bin\Debug\EntityFramework.xml
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.BLL\obj\Debug\MyParser.BLL.csprojResolveAssemblyReference.cache
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.BLL\obj\Debug\MyParser.BLL.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.BLL\obj\Debug\MyParser.BLL.pdb

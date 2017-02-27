@@ -37,3 +37,16 @@ C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.Models\bin\Debug\HtmlAg
 C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.Models\obj\Debug\MyParser.Models.csprojResolveAssemblyReference.cache
 C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.Models\obj\Debug\MyParser.Models.dll
 C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.Models\obj\Debug\MyParser.Models.pdb
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.Models\bin\Debug\MyParser.Models.dll.config
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.Models\bin\Debug\MyParser.Models.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.Models\bin\Debug\MyParser.Models.pdb
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.Models\bin\Debug\EntityFramework.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.Models\bin\Debug\HtmlAgilityPack.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.Models\bin\Debug\EntityFramework.xml
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.Models\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.Models\bin\Debug\HtmlAgilityPack.xml
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.Models\obj\Debug\MyParser.Models.csprojResolveAssemblyReference.cache
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.Models\obj\Debug\MyParser.Models.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.Models\obj\Debug\MyParser.Models.pdb

@@ -1,27 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyParser.BLL.Interfaces;
-using MyParser.DAL.Interfaces;
+using StructureMap;
 
 namespace MyParser.UnitTests
 {
     [TestClass]
-    public class TestClass
+    public class Test
     {
         [TestMethod]
-        public void Test()
+        public void ParsedPageNotNull()
         {
-            //var mock = new Mock<IUnitOfWork>();
-
-            //mock.Setup(a => a.PageRepository).Returns(new IPageRepository());
-
-            //// Act
-            //var result
-
-            //// Assert
-            //Assert.IsNotNull(result.Model);
+            var container = Container.For<ConsoleRegistry>();
+            var ps = container.GetInstance<IParserService>();
+            var page = ps.Parse("https://www.facebook.com/", false, 1);
+            Assert.IsNotNull(page);
         }
     }
 }

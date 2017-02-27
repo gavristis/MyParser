@@ -1,6 +1,4 @@
-﻿using MyParser.Models;
-
-namespace MyParser.BLL.Models
+﻿namespace MyParser.BLL.Models
 {
     public class PageRelationDto
     {

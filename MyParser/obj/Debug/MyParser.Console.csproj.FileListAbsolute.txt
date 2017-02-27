@@ -70,3 +70,28 @@ C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser\bin\Debug\System.Thread
 C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser\bin\Debug\MyParser.Models.pdb
 C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser\bin\Debug\NLog.xml
 C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser\obj\Debug\MyParser.Console.csprojResolveAssemblyReference.cache
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\MyParser.exe.config
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\NLog.config
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\MyParser.exe
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\MyParser.pdb
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\EntityFramework.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\HtmlAgilityPack.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\MyParser.BLL.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\MyParser.DAL.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\StructureMap.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\MyParser.Models.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\NLog.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\MyParser.BLL.pdb
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\MyParser.DAL.pdb
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\EntityFramework.xml
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\HtmlAgilityPack.xml
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\System.Threading.Tasks.Dataflow.xml
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\MyParser.Models.pdb
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\bin\Debug\NLog.xml
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\obj\Debug\MyParser.Console.csprojResolveAssemblyReference.cache
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\obj\Debug\MyParser.exe
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser\obj\Debug\MyParser.pdb

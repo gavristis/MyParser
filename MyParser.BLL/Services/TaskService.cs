@@ -3,7 +3,6 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using MyParser.BLL.Interfaces;
@@ -11,7 +10,6 @@ using MyParser.BLL.Models;
 using MyParser.DAL.Interfaces;
 using MyParser.Models;
 using NLog;
-using NLog.LayoutRenderers.Wrappers;
 
 namespace MyParser.BLL.Services
 {

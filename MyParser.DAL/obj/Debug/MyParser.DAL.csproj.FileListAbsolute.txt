@@ -43,3 +43,18 @@ C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.DAL\bin\Debug\HtmlAgili
 C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.DAL\obj\Debug\MyParser.DAL.csprojResolveAssemblyReference.cache
 C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.DAL\obj\Debug\MyParser.DAL.dll
 C:\Users\Gavristis\Desktop\Parser Main\MyParser\MyParser.DAL\obj\Debug\MyParser.DAL.pdb
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.DAL\bin\Debug\MyParser.DAL.dll.config
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.DAL\bin\Debug\MyParser.DAL.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.DAL\bin\Debug\MyParser.DAL.pdb
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.DAL\bin\Debug\EntityFramework.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.DAL\bin\Debug\HtmlAgilityPack.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.DAL\bin\Debug\MyParser.Models.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.DAL\bin\Debug\MyParser.Models.pdb
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.DAL\bin\Debug\EntityFramework.xml
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.DAL\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.DAL\bin\Debug\HtmlAgilityPack.xml
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.DAL\obj\Debug\MyParser.DAL.csprojResolveAssemblyReference.cache
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.DAL\obj\Debug\MyParser.DAL.dll
+C:\Users\vgavrilov\documents\visual studio 2015\Projects\MyParser\MyParser.DAL\obj\Debug\MyParser.DAL.pdb
